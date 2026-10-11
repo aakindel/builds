@@ -6,5 +6,6 @@
   "demos/005-login-social-icon-buttons-row-below-divider": "cab23b9ea5f8a42ab58d6f54cf4c272d6dda260982fb8ad7efc1c2970f94b511",
   "demos/006-login-social-icon-buttons-grid-below-divider": "967957f825604098e4456717f7d5a162a2a4d53ddebfe603886c37124d15f74d",
   "demos/007-login-combined-card": "017befd5a8558df4208edbc7449349523e0658dfa227759136a29f20d6678b40",
-  "demos/008-login-separated-card": "fea1eae852c5501d8c2c547096c5e81e32d7ccb1f0aed0a8b1f107acb1382d1d"
+  "demos/008-login-separated-card": "fea1eae852c5501d8c2c547096c5e81e32d7ccb1f0aed0a8b1f107acb1382d1d",
+  "demos/009-login-split-card": "fcd8c7ec59524b8554a62587b0c98fa9c19740d97982c6721282c91015706ca4"
 }
