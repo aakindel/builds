@@ -151,6 +151,11 @@ const DEMO_PAGE_ITEMS = [
     slug: "030-sidebar-floating-right",
     hasScreenshot: true,
   },
+  {
+    title: "Sidebar standard dual",
+    slug: "031-sidebar-standard-dual",
+    hasScreenshot: true,
+  },
 ] as const satisfies Omit<DemoPageItemType, "href">[];
 
 export const DEMO_PAGES = DEMO_PAGE_ITEMS.map((page) => ({
