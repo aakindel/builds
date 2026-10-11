@@ -61,6 +61,11 @@ const DEMO_PAGE_ITEMS = [
     slug: "012-login-split",
     hasScreenshot: true,
   },
+  {
+    title: "Signup standard",
+    slug: "013-signup-standard",
+    hasScreenshot: true,
+  },
 ] as const satisfies Omit<DemoPageItemType, "href">[];
 
 export const DEMO_PAGES = DEMO_PAGE_ITEMS.map((page) => ({
