@@ -76,6 +76,11 @@ const DEMO_PAGE_ITEMS = [
     slug: "015-signup-confirm-password",
     hasScreenshot: true,
   },
+  {
+    title: "Signup social button without divider",
+    slug: "016-signup-social-button-without-divider",
+    hasScreenshot: true,
+  },
 ] as const satisfies Omit<DemoPageItemType, "href">[];
 
 export const DEMO_PAGES = DEMO_PAGE_ITEMS.map((page) => ({
