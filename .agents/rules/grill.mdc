@@ -1,0 +1,10 @@
+---
+description: >-
+  Grill ambiguous requirements before building. Use /general-grill when scope,
+  behavior, or success criteria are unclear. Skip when requirements are already
+  concrete. After all remaining relevant grill questions are asked and answered, 
+  post ASSUMPTIONS I'M MAKING and wait. If no questions were asked, skip assumptions.
+alwaysApply: true
+---
+
+When scope, behavior, or success criteria are unclear, use the /general-grill skill to interview the user relentlessly about every aspect of the requirements until you reach a shared understanding with the user. Skip when requirements are already concrete. Use the question structure from the /general-grill skill when asking questions. Ask grill questions one at a time until every remaining relevant Question N of ~M has been asked and answered. Extra spec in an answer may make later questions redundant, add new questions, or leave the planned set unchanged. Skip a later question, or fold it into the later assumptions list, only when extra spec made it redundant. When no remaining relevant question is left to ask, post ASSUMPTIONS I'M MAKING and wait. A grill answer is not proceed-to-build, even when it includes extra spec. Do not fold still-open questions into assumptions or into silent implementation. If no grill question was asked, skip the assumptions list and start building.

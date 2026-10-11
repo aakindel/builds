@@ -1,0 +1,6 @@
+---
+description: Reuse existing ui-library components and layouts before building new UI. Use when creating or refactoring components, layouts, page shells, dialogs, tables, sidebars, forms, navigation, command palettes, querybuilders, toasts, sheets, tabs, or similar elements.
+alwaysApply: true
+---
+
+When creating or refactoring ui elements, use the /use-ui-library skill.
