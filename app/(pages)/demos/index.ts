@@ -111,6 +111,11 @@ const DEMO_PAGE_ITEMS = [
     slug: "022-signup-marketing-checkbox",
     hasScreenshot: true,
   },
+  {
+    title: "Signup minimal",
+    slug: "023-signup-minimal",
+    hasScreenshot: true,
+  },
 ] as const satisfies Omit<DemoPageItemType, "href">[];
 
 export const DEMO_PAGES = DEMO_PAGE_ITEMS.map((page) => ({
