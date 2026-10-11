@@ -1,3 +1,6 @@
+import { type LucideIcon } from "lucide-react";
+import { type AppLucideIconName } from "@/components/icons";
+
 // https://stackoverflow.com/a/59230299 : disallow excess properties
 export type ExactlyType<T, U> = T & Record<Exclude<keyof U, keyof T>, never>;
 
@@ -122,4 +125,14 @@ export type DemoPageItemType = {
   slug: string;
   href: string;
   hasScreenshot?: boolean;
+};
+
+export type AppSidebarItemType = {
+  title: string;
+  url?: string;
+  icon: LucideIcon | AppLucideIconName;
+  isActive?: boolean;
+  shouldOpenInNewTab?: boolean;
+  isDefaultCollapsed?: boolean;
+  items?: AppSidebarItemType[];
 };
