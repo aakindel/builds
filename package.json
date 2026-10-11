@@ -22,7 +22,8 @@
     "dev:agent:stop": "bash scripts/dev/agent-dev-stop.sh",
     "clean:cache": "bash scripts/dev/clean-dev-cache.sh",
     "agents:browser": "node scripts/verification/browser-workflow.mjs",
-    "test:browser-workflow": "node --test scripts/verification/browser-workflow.test.mjs"
+    "test:browser-workflow": "node --test scripts/verification/browser-workflow.test.mjs",
+    "worktrees": "node scripts/agents/worktrees/agent-worktrees.mjs"
   },
   "dependencies": {
     "@base-ui/react": "^1.8.0",

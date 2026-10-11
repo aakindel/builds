@@ -36,5 +36,12 @@
     ".next-agent/dev/types/**/*.ts",
     "**/*.mts"
   ],
-  "exclude": ["node_modules", "__docs__", "scripts", ".agents", "zlocal"]
+  "exclude": [
+    "node_modules",
+    "__docs__",
+    "scripts",
+    ".agents",
+    "zlocal",
+    ".claude/worktrees"
+  ]
 }

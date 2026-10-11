@@ -22,6 +22,8 @@ const eslintConfig = defineConfig([
   ...tsRecommended,
   prettier,
   globalIgnores([
+    "zlocal/**",
+    ".claude/worktrees/**",
     "node_modules/**",
     ".next/**",
     ".next-e2e/**",

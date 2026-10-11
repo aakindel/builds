@@ -1,0 +1,5 @@
+{
+  "setup-worktree": [
+    "node scripts/agents/worktrees/agent-worktrees.mjs setup --harness cursor"
+  ]
+}
