@@ -6,6 +6,11 @@ const DEMO_PAGE_ITEMS = [
     slug: "001-login-standard",
     hasScreenshot: true,
   },
+  {
+    title: "Login social buttons column below divider",
+    slug: "002-login-social-buttons-column-below-divider",
+    hasScreenshot: true,
+  },
 ] as const satisfies Omit<DemoPageItemType, "href">[];
 
 export const DEMO_PAGES = DEMO_PAGE_ITEMS.map((page) => ({

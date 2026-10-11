@@ -1,3 +1,4 @@
 {
-  "demos/001-login-standard": "cbac0ca6dabb91ada455f64a7232698a8907c62959b51db0af1f90efee2e260f"
+  "demos/001-login-standard": "cbac0ca6dabb91ada455f64a7232698a8907c62959b51db0af1f90efee2e260f",
+  "demos/002-login-social-buttons-column-below-divider": "70a3742489728f1e6420afad92be8a5f87a9d57776ac062b2ebf2f4657ea434d"
 }
