@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "bash scripts/dev/dev.sh",
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
@@ -16,7 +16,13 @@
     "agents:skills": "node scripts/agents/sync/sync-agent-skills.mjs",
     "agents:skills:check": "node scripts/agents/sync/sync-agent-skills.mjs --check",
     "agents:skills:status": "node scripts/agents/sync/sync-agent-skills.mjs --status",
-    "typecheck:agents": "tsc -p tsconfig.agents.json --noEmit --skipLibCheck"
+    "typecheck:agents": "tsc -p tsconfig.agents.json --noEmit --skipLibCheck",
+    "dev:agent": "bash scripts/dev/agent-dev.sh",
+    "dev:agent:url": "node scripts/dev/runtime-servers.mjs agent-url",
+    "dev:agent:stop": "bash scripts/dev/agent-dev-stop.sh",
+    "clean:cache": "bash scripts/dev/clean-dev-cache.sh",
+    "agents:browser": "node scripts/verification/browser-workflow.mjs",
+    "test:browser-workflow": "node --test scripts/verification/browser-workflow.test.mjs"
   },
   "dependencies": {
     "@base-ui/react": "^1.8.0",

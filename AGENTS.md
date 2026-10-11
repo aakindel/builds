@@ -10,6 +10,8 @@ Keep rule bodies in `.agents/rules`. Codex concatenates project instruction file
 
 ### Always applied
 
+- [agent-environment](/.agents/rules/agent-environment.mdc) — Browser verification and bounded host-reviewed retries, optional runtime/cloud preparation, and primary-only standalone post-Git skills synchronization.
+- [agent-isolation](/.agents/rules/agent-isolation.mdc) — When verification needs a server, use `pnpm dev:agent` and stop it, never `pnpm dev`. Use /agent-isolation. Never kill the user's Next process. Use when verifying UI, starting a local server, or touching Next processes.
 - [general-fix](/.agents/rules/general-fix.mdc) — After Tailwind class edits or changes that affect types, use /general-fix. Run canonical classes, applicable edited-file ESLint, then the full typecheck in that order.
 - [grill](/.agents/rules/grill.mdc) — Grill ambiguous requirements before building. Use /general-grill when scope, behavior, or success criteria are unclear. Skip when requirements are already concrete. After all remaining relevant grill questions are asked and answered, post ASSUMPTIONS I'M MAKING and wait. If no questions were asked, skip assumptions.
 - [zlocal-artifacts](/.agents/rules/project/zlocal-artifacts.mdc) — Put agent scratch (screenshots, one-off scripts, build shots) under zlocal/artifacts/, never loose in zlocal/. Durable environment evidence belongs in `__docs__/environment/`. Infrastructure and user notes stay at zlocal/ root.

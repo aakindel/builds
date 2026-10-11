@@ -1,7 +1,44 @@
 {
   "version": 1,
   "description": "Agent sync policy. Source of truth for provider hooks, Cursor, Claude, and Codex permissions, and Claude settings. Codex permissions are user-owned and are not written to a Codex file. Run pnpm agents:providers. Do not edit .cursor, .claude, .codex, or CLAUDE.md outputs by hand.",
-  "hooks": [],
+  "hooks": [
+    {
+      "id": "guard-frontend",
+      "script": "hooks/guard-frontend.mjs",
+      "timeout": 10,
+      "failClosed": true,
+      "events": {
+        "cursor": "beforeShellExecution",
+        "claude": "PreToolUse",
+        "codex": "PreToolUse"
+      },
+      "matcher": {
+        "claude": "Bash",
+        "codex": "^Bash$"
+      }
+    }
+  ],
+  "permissions": {
+    "cursor": {
+      "terminalAllowlist": [
+        "pnpm:dev:agent*",
+        "bash scripts/dev/agent-dev.sh",
+        "bash scripts/dev/agent-dev-stop.sh",
+        "pnpm:test:e2e*",
+        "pnpm exec playwright",
+        "playwright test",
+        "playwright install"
+      ]
+    },
+    "claude": {
+      "allow": [
+        "Bash(pnpm dev:agent:*)",
+        "Bash(pnpm test:e2e:*)",
+        "Bash(pnpm exec playwright:*)",
+        "Bash(pnpm exec tsc:*)"
+      ]
+    }
+  },
   "settings": {
     "claude": {
       "attribution": { "commit": "", "pr": "" }

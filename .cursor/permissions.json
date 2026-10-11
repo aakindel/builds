@@ -1,0 +1,11 @@
+{
+  "terminalAllowlist": [
+    "pnpm:dev:agent*",
+    "bash scripts/dev/agent-dev.sh",
+    "bash scripts/dev/agent-dev-stop.sh",
+    "pnpm:test:e2e*",
+    "pnpm exec playwright",
+    "playwright test",
+    "playwright install"
+  ]
+}

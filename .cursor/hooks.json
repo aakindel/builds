@@ -1,0 +1,13 @@
+{
+  "description": "Generated from .agents/sync-policy.json. Do not edit. Run pnpm agents:providers.",
+  "version": 1,
+  "hooks": {
+    "beforeShellExecution": [
+      {
+        "command": "node .agents/hooks/guard-frontend.mjs",
+        "timeout": 10,
+        "failClosed": true
+      }
+    ]
+  }
+}

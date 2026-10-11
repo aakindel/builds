@@ -1,0 +1,9 @@
+---
+description: >-
+  When verification needs a server, use `pnpm dev:agent` and stop it, never
+  `pnpm dev`. Use /agent-isolation. Never kill the user's Next process. Use
+  when verifying UI, starting a local server, or touching Next processes.
+alwaysApply: true
+---
+
+When verifying UI or touching Next processes, use the /agent-isolation skill. When the dev-depth rule is installed, use it to select verification scope; otherwise follow the project's verification requirements. When verification needs a server, use `pnpm dev:agent` and stop it before finishing; never `pnpm dev`. With dev-depth installed, shallow permits the server for focused tests and skips additional visual verification. Never kill the user's Next process. If sandbox permissions block `pnpm dev:agent` startup, immediately retry that command using the tool's permission-escalation mechanism without a separate chat confirmation. Respect the host's approval decision and report the initial block and retry outcome afterwards. Use the browser verification section of the always-applied agent-environment rule for registered browser operations, including Claudex fixtures, automatic narrow host-reviewed fallback and initial environment routing. Report unrelated blocked commands and leave them stopped.

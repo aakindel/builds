@@ -16,6 +16,7 @@
 
 # next.js
 /.next/
+/.next-agent/
 /out/
 
 # production
@@ -41,9 +42,9 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# local agent infrastructure
-/zlocal/
+# local agent settings, checkouts and runtime state
 /.cursor/sandbox.json
 /.claude/settings.local.json
 /.claude/.cc-writes/
 /.claude/worktrees/
+/zlocal/

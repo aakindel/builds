@@ -1,0 +1,48 @@
+---
+description: Browser verification and bounded host-reviewed retries, optional runtime/cloud preparation, and primary-only standalone post-Git skills synchronization.
+alwaysApply: true
+---
+
+# Agent environment
+
+Apply each section when that feature is installed or used. Browser-only installations may have a minimal `.agents/environment.json` with `version: 1` and `browserVerification.environments: []`. Cloud and host-service setup is optional. Runtime selection may use existing project declarations when `runtime` is absent. Commands that require managed runtimes need valid exact pins. A malformed present runtime section stops dependent work.
+
+## Browser verification
+
+Use `pnpm agents:browser run browser|agent|alignment|e2e|screenshot` with its registered bounded arguments, or `claudex` where its adapter is installed. Agent/alignment/E2E select explicit checked-in `e2e/*.spec.ts` files. Screenshot takes a relative owned route and a WebP under `zlocal/artifacts/screenshots/`. Never use the user's server, external origins, config overrides or arbitrary commands.
+
+Restricted or unknown macOS contexts request review before native startup unless successful sandbox evidence matches every required component and the complete effective restriction profile. Generic provider/sandbox names do not establish that profile. Preparation inspects existing declared runtimes, frozen dependencies, bundled Chromium and the project's pinned Convex asset before any server. It can prepare missing assets through a separate exact review request; it never installs system runtimes or activates cloud/host services.
+
+Exit 75 and `retryCommand` mean host review is required. Submit that exact saved command through the provider's permission-escalation tool without another chat confirmation, using the retained workspace/runtime helper. Keep UUID and arguments unchanged. The reviewed CLI does not elevate itself. Evidence and command names grant no permissions. Never add a broad prefix, change host permissions, bypass denial or use the disabled protected macOS verification service. Denial uses `pnpm agents:browser denied UUID`.
+
+Only one reviewed execution is available, persisted before spawn. Preserve the original failure independently from cleanup. Clean startup permission failures and Chromium launch timeout/crash can offer that attempt; assertions, missing dependencies, identity failures and an unexplained backend panic cannot. After abandoned owned children are proven dead, an eligible original sandbox failure can offer its unused reviewed attempt. An interrupted reviewed execution cannot replay.
+
+New runs automatically inspect recovery. `plan OPERATION` and `status UUID` are read-only. `recover UUID` reconciles state and performs bounded cleanup of proven abandoned children; it never runs tests. A valid live supervisor blocks competitors. Missing identity, malformed records and incomplete spawn receipts block startup. Recheck boot identity, PID, start, executable and run association before each signal. Never signal reused/unknown PIDs, kill the user's stack, or delete uncertain locks. Cleanup has one shared 20-second deadline; retain children and evidence that remain live for OS recovery. Do not reboot automatically.
+
+Control records live in `zlocal/agent-browser/`; logs, events and traces live in `zlocal/artifacts/browser-workflow/UUID/`. `migrate` previews legacy state; `migrate --apply` preserves originals and records its journal. Incomplete legacy ownership never becomes invented proof. The shared per-user store at `~/.local/state/ui-library-agent-browser/` contains component compatibility only, never approvals, ownership or test results. Reviewed success does not establish sandbox support. An unavailable store keeps routing conservative. Saved request fingerprints include actual sources, selected tests, lockfile and runtimes; compatibility excludes unrelated cloud/host/skills configuration and unrelated dependency changes.
+
+Deadlines: preparation total 600s; Convex keygen 15s, startup 60s, deploy 180s and required export/import 120s each; Next readiness 180s; Chromium launch 30s sandbox/60s reviewed; verification total 900s; shared cleanup 20s. Required fixture failures stay failures. Depth selects required checks, but once a required browser check starts its eligible fallback remains required at shallow depth. Durable findings belong in `__docs__/environment/`.
+
+Local macOS completion does not require Docker, Linux execution, cloud provisioning, signed host-service activation, signing keys, a machine-cache daemon or a custom macOS sandbox repair. Keep portable Linux/provider fixture checks and explicit cloud commands; report live cloud verification pending separately. `agents:verify` remains the underlying compatibility launcher. Browser-only environment configs need no cloud/runtime section; malformed present pins remain errors.
+
+## Managed runtimes
+
+Runtime pins live in .agents/environment.json. Setup projects packageManager and, when runtime.projectEngines is true, engines.node before installing. Pre-commit projects staged runtime inputs while preserving unrelated package edits. Runtime or dependency changes invalidate browser readiness evidence. Linux privileged setup alone downloads verified official runtimes; task startup and worktree selection use prepared installed versions. A protected host runtime mismatch requires separate host review, never an automatic path or permission change.
+
+## Cloud preparation
+
+Cloud setup runs before the agent with scripts/agents/cloud/cloud-setup.sh and the explicit provider. Configure agents:cloud:prepare in the provider's startup/maintenance phase before the agent to recheck readiness and refresh protected project skills. Bind an explicitly host-assigned ordinary clone with --assignment-kind cloud and the real stable thread/session ID. Retain its workspace key. Launch paths and branch prefixes alone are not assignment evidence. Cloud ownership records use zlocal/agent-cloud-workspaces, avoiding task-time Git metadata writes. Readiness failures stop dependent work. Claude SessionStart itself cannot enforce a provider-wide stop. Require GitHub write readiness only when the task explicitly requests push or PR publication.
+
+## Protected host requests
+
+Prefer provider-native restrictions. The installed ordinary command stays inside the provider sandbox and submits workspace data to the protected service. Do not automatically elevate that command or mutable repository wrappers. The service validates task root, HEAD, scope and capabilities before executing inside its reviewed OS boundary. Every queued Git write needs a separately host-reviewed exact request digest tied to the user's commit instruction. Keep the review administrator out of broad grants. Signing credentials and linked Git metadata may need native or narrow reviewed fallback. Custom macOS Chromium verification is disabled because that boundary failed; use the exact bounded reviewed native launcher. Never auto-grant arbitrary node, bash, Git or network prefixes. Source tests do not establish actual host protection or provider trust; report pending activation.
+
+## Post-Git skills synchronization
+
+Repository projections use staged inputs in pre-commit. General skills publish through `scripts/agents/sync/sync-agent-skills.mjs` after successful commits, amendments and merges, or on an explicit manual sync request. The standalone command needs no signed host service. It requires `skillsSync.enabled: true` and an absolute or home-relative `skillsSync.primary` in .agents/environment.json. Store paths under the user's home as `~/...`; the reader expands them before verifying the primary Git checkout. Secondary worktrees and cloud/CI sessions skip personal writes. Other projects remain disabled by default.
+
+Publish the full physical skill tree, including unstaged source files. Keep home writes out of pre-commit. Nested personal copies and filtered flat Claude copies retain supporting resources and invocation metadata. Editor settings belong to vscursor-claudex and are outside this workflow. The only personal setting it merges besides the chat-doc Stop hook is `attribution` in `~/.claude/settings.json`, declared by `skillsSync.personalSettings.claude.attribution`; a hand-changed value is reported and kept. Do not run the legacy host machine writer against the same skill destinations.
+
+Adopt identical existing copies. Preserve different unmanaged copies, independently changed managed files and symlinks. A conflict blocks the entire affected skill group in both destinations; independent groups continue. Retire only unchanged owned files. The helper owns locking, atomic writes, interruption recovery and one bounded transient retry. Never delete an uncertain lock or overwrite a conflict to make sync pass.
+
+Use `pnpm agents:skills:check` for a read-only preview and `pnpm agents:skills:status` after commits. Report publication separately from Git success. Pending details live in ignored `zlocal/agent-skills-sync/status.json`; retry at the next Git event or explicitly with `pnpm agents:skills`. A permission-blocked authorized sync may submit that report's exact fingerprinted retry command for normal host review. No broad permission prefix, disabled restriction or extra commit is authorized by a failed sync.

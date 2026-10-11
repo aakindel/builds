@@ -1,0 +1,17 @@
+{
+  "description": "Generated from .agents/sync-policy.json. Do not edit. Run pnpm agents:providers.",
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "^Bash$",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"$(git rev-parse --show-toplevel)/.agents/hooks/guard-frontend.mjs\"",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  }
+}
