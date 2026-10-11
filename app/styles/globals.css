@@ -1,0 +1,32 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "./reset.css";
+@import "./variables.css";
+@import "./utilities.css";
+@import "./layout.css";
+
+/* https://tailwindcss.com/docs/dark-mode#toggling-dark-mode-manually :
+   use .dark class (instead of prefers-color-scheme) to toggle dark mode */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    @apply text-base;
+
+    -webkit-tap-highlight-color: rgb(0 0 0 / 0.05);
+    ::selection {
+      @apply bg-black/10;
+    }
+
+    &.dark {
+      -webkit-tap-highlight-color: rgb(255 255 255 / 0.05);
+      ::selection {
+        @apply bg-white/10;
+      }
+    }
+  }
+
+  body {
+    @apply bg-background text-foreground min-h-screen text-base antialiased;
+  }
+}

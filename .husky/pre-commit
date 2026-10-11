@@ -1,0 +1,36 @@
+#!/usr/bin/env sh
+
+# Block stacking a new commit on top of an interim checkpoint.
+latest_subject=$(git log -1 --format=%s 2>/dev/null || true)
+
+if [ "$latest_subject" = "interim commit" ]; then
+  # Prefer an explicit env flag: Cursor's Shell sandbox hides `ps`, so detecting
+  # `--amend` via parent process command lines fails there and forces agents to
+  # request unrestricted permissions. Agent-commit / make-interim-commit set this.
+  if [ "${AGENT_ALLOW_INTERIM_AMEND:-}" = "1" ]; then
+    :
+  else
+    parent_command=$(ps -ocommand= -p "$PPID" 2>/dev/null || true)
+    grandparent_pid=$(ps -o ppid= -p "$PPID" 2>/dev/null | tr -d ' ')
+    grandparent_command=""
+
+    if [ -n "$grandparent_pid" ]; then
+      grandparent_command=$(ps -ocommand= -p "$grandparent_pid" 2>/dev/null || true)
+    fi
+
+    case "$parent_command $grandparent_command" in
+      *"--amend"*)
+        ;;
+      *)
+        echo "Commit rejected: the latest commit message is 'interim commit'."
+        echo "Amend that commit instead of creating a new one:"
+        echo "  AGENT_ALLOW_INTERIM_AMEND=1 git commit --amend"
+        exit 1
+        ;;
+    esac
+  fi
+fi
+
+# Sequential tasks avoid OOM/SIGKILL when tsc + eslint + prettier + manifest
+# run in parallel on large clone/demo commits in constrained environments.
+pnpm exec lint-staged --concurrent false

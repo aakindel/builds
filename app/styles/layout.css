@@ -1,0 +1,16 @@
+@layer base {
+  /* fixed styles for sidebar layouts */
+  html,
+  body {
+    position: fixed;
+    inset: 0;
+  }
+  html,
+  body,
+  #root,
+  #app-root-layout-container {
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+  }
+}

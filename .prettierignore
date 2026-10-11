@@ -1,0 +1,13 @@
+node_modules
+build
+pnpm-lock.yaml
+app/styles/variables.css
+/zlocal/artifacts/
+# Copied skill payloads and generated provider output retain exact bytes.
+/.agents/**/files/
+/.claude/rules/
+/.claude/settings.json
+/.codex/hooks.json
+/.cursor/hooks.json
+/.cursor/permissions.json
+/.cursor/cli.json

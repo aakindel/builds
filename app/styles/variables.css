@@ -1,0 +1,208 @@
+:root {
+  --radius: 0.625rem;
+}
+
+@theme inline {
+  --radius: 0.625rem;
+  --breakpoint-3xl: 100rem;
+  --breakpoint-4xl: 125rem;
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+  --font-sans-plus: var(--font-inter-dots), var(--font-sans);
+
+  /* Arithmetic 2px lattice (canonical). Do not replace with multiplicative
+     calc(var(--radius) * N) — concentric radii need named steps at ±2px. */
+  --radius-xs: calc(var(--radius) - 6px);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 2px);
+  --radius-2xl: calc(var(--radius) + 4px);
+  --radius-3xl: calc(var(--radius) + 6px);
+  --radius-4xl: calc(var(--radius) + 8px);
+  --radius-5xl: calc(var(--radius) + 10px);
+  --radius-6xl: calc(var(--radius) + 12px);
+
+  /* --radius (10px) - 3px = 7px; 7 * 4 = 28px (size of icon-xs button) */
+  --radius-core-xs: calc(var(--radius) - 3px);
+  /* --radius (10px) - 2px = 8px; 8 * 4 = 32px (size of icon-sm button) */
+  --radius-core-sm: var(--radius-md);
+  --radius-core: var(--radius-md);
+  --radius-popover: var(--radius);
+
+  /* core: default control spacing shared by button, input, select */
+  --core-default-py: --spacing(1.75);
+  --core-default-px: --spacing(3);
+  --core-default-leading: --spacing(5);
+  --core-default-gap: --spacing(2);
+
+  /* background: white dark:neutral-950 */
+  --color-background: var(--background);
+  /* background-secondary: white dark:neutral-900 */
+  --color-background-secondary: var(--background-secondary);
+  /* background-tertiary: neutral-50 dark:neutral-900 */
+  --color-background-tertiary: var(--background-tertiary);
+  /* surface: white dark:white/4 */
+  --color-surface: var(--surface);
+  /* primary-foreground: neutral-50 dark:neutral-900 */
+  --color-primary-foreground: var(--primary-foreground);
+  /* static-light: neutral-50 dark:neutral-50 */
+  --color-static-light: var(--static-light);
+  /* accent: neutral-100 dark:neutral-700 */
+  --color-accent: var(--accent);
+  /* muted: neutral-100 dark:neutral-800 */
+  --color-muted: var(--muted);
+  /* secondary: neutral-200/60 dark:neutral-800 */
+  --color-secondary: var(--secondary);
+  /* boundary: neutral-200 dark:white/10 */
+  --color-boundary: var(--boundary);
+  /* boundary-secondary: neutral-200 dark:white/15 */
+  --color-boundary-secondary: var(--boundary-secondary);
+  /* subtle: neutral-200 dark:neutral-800 */
+  --color-subtle: var(--subtle);
+  /* dim: neutral-300 dark:neutral-700 */
+  --color-dim: var(--dim);
+  /* subdued: neutral-400 dark:neutral-500 */
+  --color-subdued: var(--subdued);
+  /* muted-foreground: neutral-500 dark:neutral-400 */
+  --color-muted-foreground: var(--muted-foreground);
+  /* static-500: neutral-500 dark:neutral-500 */
+  --color-static-500: var(--static-500);
+  /* emphasis: neutral-600 dark:neutral-400 */
+  --color-emphasis: var(--emphasis);
+  /* major: neutral-700 dark:neutral-300 */
+  --color-major: var(--major);
+  /* eminent: neutral-800 dark:neutral-200 */
+  --color-eminent: var(--eminent);
+  /* primary: neutral-900 dark:neutral-50 */
+  --color-primary: var(--primary);
+  /* foreground: neutral-950 dark:neutral-50 */
+  --color-foreground: var(--foreground);
+  /* overlay: black/60 dark:black/80 */
+  --color-overlay: var(--overlay);
+  /* destructive: red-500 dark:red-900 */
+  --color-destructive: var(--destructive);
+  /* destructive-emphasis: red-600 dark:red-400 */
+  --color-destructive-emphasis: var(--destructive-emphasis);
+  /* chart-1: blue-500 dark:blue-400 — primary series */
+  --color-chart-1: var(--chart-1);
+  /* chart-2: blue-600 dark:blue-500 */
+  --color-chart-2: var(--chart-2);
+  /* chart-3: blue-700 dark:blue-600 */
+  --color-chart-3: var(--chart-3);
+  /* chart-4: blue-900 dark:blue-800 */
+  --color-chart-4: var(--chart-4);
+  /* chart-5: sky-500 dark:sky-400 */
+  --color-chart-5: var(--chart-5);
+
+  --color-foreground-a2: color-mix(in oklab, var(--color-foreground) 2%, transparent);
+  --color-foreground-a6: color-mix(in oklab, var(--color-foreground) 6%, transparent);
+  --color-foreground-a10: color-mix(in oklab, var(--color-foreground) 10%, transparent);
+}
+
+:root {
+  --background: var(--color-white);
+  --background-secondary: var(--color-white);
+  --background-tertiary: var(--color-neutral-50);
+  --surface: var(--color-white);
+  --primary-foreground: var(--color-neutral-50);
+  --static-light: var(--color-neutral-50);
+  --accent: var(--color-neutral-100);
+  --muted: var(--color-neutral-100);
+  --secondary: color-mix(in oklab, var(--color-neutral-200) 60%, transparent); /* n-200/60 */
+  --boundary: var(--color-neutral-200);
+  --boundary-secondary: var(--color-neutral-200);
+  --subtle: var(--color-neutral-200);
+  --dim: var(--color-neutral-300);
+  --subdued: var(--color-neutral-400);
+  --muted-foreground: var(--color-neutral-500);
+  --static-500: var(--color-neutral-500);
+  --emphasis: var(--color-neutral-600);
+  --major: var(--color-neutral-700);
+  --eminent: var(--color-neutral-800);
+  --primary: var(--color-neutral-900);
+  --foreground: var(--color-neutral-950);
+  --overlay: color-mix(in oklab, var(--color-black) 60%, transparent); /* black/60 */
+  --destructive: var(--color-red-500);
+  --destructive-emphasis: var(--color-red-600);
+  --chart-1: var(--color-blue-500);
+  --chart-2: var(--color-blue-600);
+  --chart-3: var(--color-blue-700);
+  --chart-4: var(--color-blue-900);
+  --chart-5: var(--color-sky-500);
+}
+
+.dark {
+  --background: var(--color-neutral-950);
+  --background-secondary: var(--color-neutral-900);
+  --background-tertiary: var(--color-neutral-900);
+  --surface: color-mix(in oklab, var(--color-white) 4%, transparent); /* white/4 */
+  --primary-foreground: var(--color-neutral-900);
+  --static-light: var(--color-neutral-50);
+  --accent: var(--color-neutral-700);
+  --muted: var(--color-neutral-800);
+  --secondary: var(--color-neutral-800);
+  --boundary: color-mix(in oklab, var(--color-white) 10%, transparent); /* white/10 */
+  --boundary-secondary: color-mix(in oklab, var(--color-white) 15%, transparent); /* white/15 */
+  --subtle: var(--color-neutral-800);
+  --dim: var(--color-neutral-700);
+  --subdued: var(--color-neutral-500);
+  --muted-foreground: var(--color-neutral-400);
+  --static-500: var(--color-neutral-500);
+  --emphasis: var(--color-neutral-400);
+  --major: var(--color-neutral-300);
+  --eminent: var(--color-neutral-200);
+  --primary: var(--color-neutral-50);
+  --foreground: var(--color-neutral-50);
+  --overlay: color-mix(in oklab, var(--color-black) 80%, transparent); /* black/80 */
+  --destructive: var(--color-red-900);
+  --destructive-emphasis: var(--color-red-400);
+  --chart-1: var(--color-blue-400);
+  --chart-2: var(--color-blue-500);
+  --chart-3: var(--color-blue-600);
+  --chart-4: var(--color-blue-800);
+  --chart-5: var(--color-sky-400);
+}
+
+/* ============================================================================
+   FLOATER
+   ============================================================================ */
+
+   @theme inline {
+    /* floater: white dark:neutral-800 */
+    --color-floater: var(--floater);
+    /* floater-foreground: neutral-100 dark:neutral-700 */
+    --color-floater-foreground: var(--floater-foreground);
+  }
+  
+  :root {
+    --floater: var(--color-white);
+    --floater-foreground: var(--color-neutral-100);
+  }
+  
+  .dark {
+    --floater: var(--color-neutral-800);
+    --floater-foreground: var(--color-neutral-700);
+  }
+
+/* ============================================================================
+   ANIMATIONS
+   ============================================================================ */
+  
+  @theme inline {
+    /* ease-out — enters, exits, user-initiated UI */
+    --ease-out-quad: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --ease-out-cubic: cubic-bezier(0.215, 0.61, 0.355, 1);
+    --ease-out-quart: cubic-bezier(0.165, 0.84, 0.44, 1);
+    --ease-out-quint: cubic-bezier(0.23, 1, 0.32, 1);
+    --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
+    --ease-out-circ: cubic-bezier(0.075, 0.82, 0.165, 1);
+  
+    /* ease-in-out — elements moving/morphing on screen */
+    --ease-in-out-quad: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    --ease-in-out-cubic: cubic-bezier(0.645, 0.045, 0.355, 1);
+    --ease-in-out-quart: cubic-bezier(0.77, 0, 0.175, 1);
+    --ease-in-out-quint: cubic-bezier(0.86, 0, 0.07, 1);
+    --ease-in-out-expo: cubic-bezier(1, 0, 0, 1);
+    --ease-in-out-circ: cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  }

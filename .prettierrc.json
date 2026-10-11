@@ -1,0 +1,50 @@
+{
+  "semi": true,
+  "trailingComma": "es5",
+  "singleQuote": false,
+  "tabWidth": 2,
+  "useTabs": false,
+  "endOfLine": "lf",
+  "tailwindFunctions": ["cn", "cva", "tw", "classObject"],
+  "importOrder": [
+    "",
+    "^(react/(.*)$)|^(react$)",
+    "^(next/(.*)$)|^(next$)",
+    "<BUILTIN_MODULES>",
+    "<THIRD_PARTY_MODULES>",
+    "^(@/types/(.*)$)|^(@/types$)",
+    "^(@/utils/(.*)$)|^(@/utils$)",
+    "^(@/requests/(.*)$)|^(@/requests$)",
+    "^(@/validations/(.*)$)|^(@/validations$)",
+    "^(@/config/(.*)$)|^(@/config$)",
+    "^(@/lib/(.*)$)|^(@/lib$)",
+    "^(@/hooks/(.*)$)|^(@/hooks$)",
+    "^(@/components/ui/(.*)$)|^(@/components/ui$)",
+    "^(@/components/(.*)$)|^(@/components$)",
+    "^(@/styles/(.*)$)|^(@/styles$)",
+    "^(@/app/(.*)$)|^(@/app$)",
+    "^(@/(.*)$)|^(@$)",
+    "^[./]"
+  ],
+  "importOrderParserPlugins": ["typescript", "jsx", "decorators-legacy"],
+  "plugins": [
+    "@ianvs/prettier-plugin-sort-imports",
+    "prettier-plugin-tailwindcss"
+  ],
+  "overrides": [
+    {
+      "files": "__docs__/**/*.md",
+      "options": {
+        "parser": "docs-markdown",
+        "plugins": [
+          "./scripts/docs/docs-markdown-plugin.mjs",
+          "@ianvs/prettier-plugin-sort-imports",
+          "prettier-plugin-tailwindcss"
+        ],
+        "proseWrap": "preserve",
+        "embeddedLanguageFormatting": "off",
+        "endOfLine": "auto"
+      }
+    }
+  ]
+}

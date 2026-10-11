@@ -1,0 +1,77 @@
+@layer base {
+  * {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+    @apply focus-visible:app-active-ring-offset rounded-xs;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+  }
+
+  /* https://benmyers.dev/blog/clickable-divs/ : button reset */
+  button {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    font-family: inherit;
+    font-size: 1rem;
+    line-height: 1;
+    background: transparent;
+  }
+
+  /* https://tailwindcss.com/docs/upgrade-guide#buttons-use-the-default-cursor : 
+     use cursor-pointer for buttons by default */
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  body[data-scroll-locked] {
+    overflow: hidden;
+  }
+
+  /* https://tailwindcss.com/docs/upgrade-guide#default-border-color :
+     set default border, ring, and outline colors (like tailwind v3) */
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    @apply border-neutral-200 dark:border-neutral-800;
+    @apply ring-neutral-200 dark:ring-neutral-800;
+    @apply outline-neutral-200 dark:outline-neutral-800;
+    @apply focus-visible:outline-2 focus-visible:outline-neutral-600/35 focus-visible:outline-solid dark:border-neutral-800 dark:focus-visible:outline-neutral-400/35;
+  }
+}
+
+/* override default `disabled:` to match both native `:disabled` and `[data-disabled]` */
+@custom-variant disabled (&:disabled, &[data-disabled=true]);
+
+/* https://tailwindcss.com/docs/adding-custom-styles#adding-custom-variants :
+   override default `hover:` to prevent disabled hover but retain tailwind v4
+   `(@media (hover: hover)` check to prevent hover activation on touch devices */
+@custom-variant hover {
+  @media (hover: hover) {
+    &:not(:disabled):not([data-loading]):hover {
+      @slot;
+    }
+  }
+}
+
+/* override default `active:` to prevent disabled/loading active styles */
+@custom-variant active (&:not(:disabled):not([data-loading]):active);

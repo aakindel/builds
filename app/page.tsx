@@ -1,7 +1,7 @@
 export default function Home() {
   return (
     <main>
-      <div>Hello world!</div>
+      <p className="font-medium">Default template removed.</p>
     </main>
   );
 }

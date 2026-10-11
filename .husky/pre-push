@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+
+# Unknown or missing history fails closed. New branches inspect all outgoing
+# ancestry that is not already represented by this remote's tracking refs.
+node scripts/agents/host/agent-pre-push.mjs "$1"

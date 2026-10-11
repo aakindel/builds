@@ -1,0 +1,4 @@
+#!/usr/bin/env sh
+[ ! -f scripts/agents/sync/agent-projections.mjs ] || node scripts/agents/sync/agent-projections.mjs finalize >/dev/null || true
+# A saved commit is never rolled back by a skill synchronization failure.
+[ ! -f scripts/agents/sync/sync-agent-skills.mjs ] || node scripts/agents/sync/sync-agent-skills.mjs --hook || true
