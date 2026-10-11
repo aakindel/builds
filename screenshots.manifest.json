@@ -3,5 +3,6 @@
   "demos/002-login-social-buttons-column-below-divider": "70a3742489728f1e6420afad92be8a5f87a9d57776ac062b2ebf2f4657ea434d",
   "demos/003-login-social-buttons-column-above-divider": "3d8cef9dd16f45c3aae778e748a3568f1b24b187754a24cb18125ec3b7fa7d63",
   "demos/004-login-social-buttons-row-below-divider": "3f1b98ffc8e3423d6e76bee429acc079bc1b0dd1c0f851481e0941633bf48659",
-  "demos/005-login-social-icon-buttons-row-below-divider": "cab23b9ea5f8a42ab58d6f54cf4c272d6dda260982fb8ad7efc1c2970f94b511"
+  "demos/005-login-social-icon-buttons-row-below-divider": "cab23b9ea5f8a42ab58d6f54cf4c272d6dda260982fb8ad7efc1c2970f94b511",
+  "demos/006-login-social-icon-buttons-grid-below-divider": "967957f825604098e4456717f7d5a162a2a4d53ddebfe603886c37124d15f74d"
 }
