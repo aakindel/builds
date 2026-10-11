@@ -1,0 +1,72 @@
+import React from "react";
+import { type AppSidebarItemType } from "@/types";
+import { SidebarProvider } from "@/components/ui/sidebar/sidebar-provider";
+import { PageScrollRestoration } from "@/components/page-scroll";
+import {
+  FloatingLeftClientLayout,
+  FloatingLeftPageContentClientLayout,
+} from "./client-layout";
+
+const SIDEBAR_MIN_WIDTH = 200;
+const SIDEBAR_MAX_WIDTH = 330;
+
+const FloatingLeftLayoutShell = ({
+  children,
+  sidebarCookieName,
+  sidebarWidthCookieName,
+  sidebarItems,
+}: {
+  children: React.ReactNode;
+  sidebarCookieName?: string;
+  sidebarWidthCookieName?: string;
+  sidebarItems?: AppSidebarItemType[];
+}) => {
+  return (
+    <SidebarProvider
+      className="h-full min-h-0 overflow-hidden"
+      sidebars={[
+        {
+          id: "left",
+          side: "left",
+          sidebarCookieName,
+          sidebarWidthCookieName,
+          minSidebarWidth: SIDEBAR_MIN_WIDTH,
+          maxSidebarWidth: SIDEBAR_MAX_WIDTH,
+        },
+      ]}
+    >
+      <FloatingLeftClientLayout sidebarItems={sidebarItems}>
+        {children}
+      </FloatingLeftClientLayout>
+    </SidebarProvider>
+  );
+};
+
+export const FloatingLeftLayout = ({
+  children,
+  className,
+  sidebarCookieName,
+  sidebarWidthCookieName,
+  sidebarItems,
+}: {
+  children: React.ReactNode;
+  className?: string;
+  sidebarCookieName?: string;
+  sidebarWidthCookieName?: string;
+  sidebarItems?: AppSidebarItemType[];
+}) => {
+  return (
+    <React.Fragment>
+      <PageScrollRestoration />
+      <FloatingLeftLayoutShell
+        sidebarCookieName={sidebarCookieName}
+        sidebarWidthCookieName={sidebarWidthCookieName}
+        sidebarItems={sidebarItems}
+      >
+        <FloatingLeftPageContentClientLayout className={className}>
+          {children}
+        </FloatingLeftPageContentClientLayout>
+      </FloatingLeftLayoutShell>
+    </React.Fragment>
+  );
+};
