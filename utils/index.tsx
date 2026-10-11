@@ -2,6 +2,7 @@ import * as React from "react";
 import { type AxiosError, type AxiosResponse } from "axios";
 import { cn } from "cn";
 import * as z from "zod";
+import { type FieldOptionType } from "@/types";
 
 // https://github.com/shadcn-ui/cn
 export { cn };
@@ -321,4 +322,24 @@ export const getTitleCase = (
     .split(delimiter)
     .map((word) => word.charAt(0).toUpperCase() + word.substring(1))
     .join(shouldJoinWithDelimiter ? delimiter : " ");
+};
+
+/* Demo-only: keep demo controls from running real actions
+  (and keep demo `#` links from scrolling or pushing history) */
+export const preventEventDefault = (event: React.MouseEvent) => {
+  event.preventDefault();
+  event.stopPropagation();
+};
+
+export const getFieldOptionsServerValue = ({
+  fieldOptions,
+  fieldValue,
+}: {
+  fieldOptions: FieldOptionType[];
+  fieldValue: string;
+}) => {
+  return (
+    fieldOptions.find((fieldOption) => fieldOption.id === fieldValue)?.title ??
+    fieldValue
+  );
 };
