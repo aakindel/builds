@@ -299,3 +299,26 @@ export function consoleError(
     }
   }
 }
+
+/* returns string without frontslash (e.g. "/url" -> "url") */
+export const getStringWithoutFrontslash = (value: string) => {
+  return value.startsWith("/") ? value.slice(1) : value;
+};
+
+// https://stackoverflow.com/a/32589289 : get string with each first letter capitalized
+export const getTitleCase = (
+  str: string,
+  {
+    delimiter,
+    shouldJoinWithDelimiter,
+  }: { delimiter: string; shouldJoinWithDelimiter?: boolean } = {
+    delimiter: " ",
+    shouldJoinWithDelimiter: false,
+  }
+) => {
+  return str
+    .toLowerCase()
+    .split(delimiter)
+    .map((word) => word.charAt(0).toUpperCase() + word.substring(1))
+    .join(shouldJoinWithDelimiter ? delimiter : " ");
+};

@@ -4,6 +4,8 @@
 @import "./variables.css";
 @import "./utilities.css";
 @import "./layout.css";
+@import "./hit-area.css";
+@import "./shadcn.css";
 
 /* https://tailwindcss.com/docs/dark-mode#toggling-dark-mode-manually :
    use .dark class (instead of prefers-color-scheme) to toggle dark mode */

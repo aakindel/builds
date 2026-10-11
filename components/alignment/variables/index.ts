@@ -3,6 +3,7 @@ import {
   BUTTON_VARIABLE_CLASSES,
   BUTTON_VARIABLE_GROUP_CLASSES,
 } from "./_button";
+import { DEMO_GRID_VARIABLE_GROUP_CLASSES } from "./_demo-grid";
 import {
   DROPDOWN_VARIABLE_CLASSES,
   DROPDOWN_VARIABLE_GROUP_CLASSES,
@@ -36,6 +37,7 @@ export const VARIABLE_CLASSES = {
 
 /* group -> variable -> class */
 export const VARIABLE_GROUP_CLASSES = {
+  ...DEMO_GRID_VARIABLE_GROUP_CLASSES,
   ...INPUT_VARIABLE_GROUP_CLASSES,
   ...SELECT_VARIABLE_GROUP_CLASSES,
   ...DROPDOWN_VARIABLE_GROUP_CLASSES,
@@ -49,6 +51,10 @@ type VariableGroupClasses = typeof VARIABLE_GROUP_CLASSES;
 
 /* Register a new family here and in the merged spreads above. */
 type VariableTablesByFamily = {
+  demoGrid: {
+    classes: Record<never, never>;
+    groups: typeof DEMO_GRID_VARIABLE_GROUP_CLASSES;
+  };
   input: {
     classes: typeof INPUT_VARIABLE_CLASSES;
     groups: typeof INPUT_VARIABLE_GROUP_CLASSES;
@@ -158,6 +164,7 @@ function getVariableClassGroup<
 export const APP_VARIABLE_CLASS: {
   [Family in VariableFamily]: ScopedGetVariableClass<Family>;
 } = Object.assign(getVariableClassToken, {
+  demoGrid: getVariableClassToken as ScopedGetVariableClass<"demoGrid">,
   input: getVariableClassToken as ScopedGetVariableClass<"input">,
   select: getVariableClassToken as ScopedGetVariableClass<"select">,
   dropdown: getVariableClassToken as ScopedGetVariableClass<"dropdown">,
@@ -179,6 +186,7 @@ export const APP_VARIABLE_CLASS: {
 export const APP_VARIABLE_CLASSES: {
   [Family in VariableFamily]: ScopedGetVariableClasses<Family>;
 } = Object.assign(getVariableClassGroup, {
+  demoGrid: getVariableClassGroup as ScopedGetVariableClasses<"demoGrid">,
   input: getVariableClassGroup as ScopedGetVariableClasses<"input">,
   select: getVariableClassGroup as ScopedGetVariableClasses<"select">,
   dropdown: getVariableClassGroup as ScopedGetVariableClasses<"dropdown">,

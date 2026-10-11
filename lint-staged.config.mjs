@@ -27,6 +27,7 @@ const lintStagedConfig = {
   ".agents/rules/**": () => "node scripts/agents/sync/agent-projections.mjs rules",
   ".agents/sync-policy.json": () => "node scripts/agents/sync/agent-projections.mjs providers",
   ".agents/hooks/**": () => "node scripts/agents/sync/agent-projections.mjs providers",
+  "{app/**/demos/**,public/demos/**,screenshots.manifest.json}": () => "node scripts/checks/screenshot-guard.mjs",
 };
 
 export default lintStagedConfig;

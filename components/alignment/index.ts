@@ -49,3 +49,5 @@ export {
   SIDEBAR_ROW_LEADING_CLASS,
   SIDEBAR_TEXT_START_CLASS,
 } from "./variables/_sidebar";
+
+export { DEMO_GRID_RADIUS_CLASS } from "./variables/_demo-grid";

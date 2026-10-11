@@ -116,3 +116,10 @@ export type FieldOptionDescriptionType = {
   title: string;
   description: string;
 };
+
+export type DemoPageItemType = {
+  title: string;
+  slug: string;
+  href: string;
+  hasScreenshot?: boolean;
+};
