@@ -1,0 +1,126 @@
+<!-- Generated from .agents/rules. Do not edit. Run pnpm agents:rules. -->
+
+# Development depth
+
+<!-- dev-depth-managed: 1 -->
+
+This rule and `scripts/dev/dev-depth.mjs` are installed by `/add-agent-dev-depth`.
+Worktrees are optional. If the project has the agent-worktrees rule, resolve its
+workspace first. Otherwise use the selected project root. Before implementation
+work each turn, run from that root:
+
+```sh
+node scripts/dev/dev-depth.mjs start 'Short task summary'
+```
+
+Read the returned config and retain the returned run ID for this turn. Do not
+reread settings midway through the turn. A resumed implementation turn starts
+a new run. Discussion, planning-only answers, and questions are read-only:
+do not initialize config or create logs for those turns.
+
+The helper creates a missing `zlocal/dev-config.json` with only its own settings:
+
+```json
+{
+  "DEV_DEPTH": "shallow",
+  "DEV_DEPTH_LOG_RUNS": false
+}
+```
+
+Only `shallow` and `deep` are valid depths; `DEV_DEPTH_LOG_RUNS` must be a boolean.
+Missing depth keys use these defaults without changing an existing config.
+The helper validates only its own keys and preserves worktree and other settings.
+An invalid existing config stays untouched. Report the helper's warning and
+use shallow with logging off for that turn. Do not overwrite a user's settings.
+The config is local infrastructure and belongs at `zlocal/` root.
+
+Installation migrates valid legacy `dev-depth.json` settings, translating
+`LOG_RUNS` to `DEV_DEPTH_LOG_RUNS`. Existing destination values win. The legacy
+file is archived under `zlocal/artifacts/dev-depth-migrations/` before its path
+in the selected checkout is removed. Malformed files remain untouched and stop
+migration. For an existing project, run `node scripts/dev/dev-depth.mjs migrate`.
+Normal turn startup reads only `dev-config.json`; it does not perform migration.
+
+## Work and verification
+
+Depth controls verification scope, not implementation completeness. Implement
+the requested behavior in either mode. Never create tests just to satisfy a
+quota. Keep applicable Tailwind canonicalization, edited-file ESLint, and full
+TypeScript checks in their existing order under `/general-fix` in both modes.
+
+- **Shallow:** run tests created or modified for the task and existing tests
+  directly covering changed behavior. Select specific tests or files; do not
+  default to a whole component or full suite. Skip additional visual/browser
+  verification. An agent server is allowed when these focused tests need it.
+- **Deep:** run affected tests and applicable agent verification. Broaden tests
+  when shared components, global styles, dependencies, or test infrastructure
+  change and wider coverage is warranted. A full suite is not automatic.
+- Explicit user requests for verification override these limits for this turn
+  without changing the config. Record the request as an override when logging.
+  Do not silently promote shallow to deep because a task looks complex.
+- Plans must name affected checks and explain any broader test scope. After a
+  passing check, repeat it only when a subsequent change or failure warrants it.
+- Whenever a server runs, use `/agent-isolation`: `pnpm dev:agent`, never
+  `pnpm dev`; stop the agent server before finishing. Isolation and protection
+  of the user's processes apply at either depth.
+- This rule controls whether additional verification is required when
+  an isolation skill or older plan prescribes a blanket verification pass.
+  It does not waive static checks, isolation, permissions, or explicit user
+  requirements. Do not substitute the user's server for a skipped agent server.
+- Final reports follow the reporting section below at either depth. Depth never
+  turns a blocked or skipped check into a passing result.
+
+## Verification reporting
+
+This reporting contract applies to every result, including shallow runs and runs with timing logs disabled.
+
+"Verified" only names commands that ran and passed in this session. Blocked or skipped commands go in a `Not verified:` list. Each entry names the changed files or functions that only that command would run, why it was skipped or blocked, and the safe substitute that was run instead. If no substitute ran, say so. Include checks intentionally skipped under its rule; do not describe those as passed. Do not put a passed check and a blocked check in one sentence.
+
+## Optional timing logs
+
+`DEV_DEPTH_LOG_RUNS: false` returns run ID `off` and creates no logging artifacts. Skip
+all timing calls in that case. Do not enable logging just for your own run.
+
+When enabled, the helper creates a unique Markdown file under
+`zlocal/artifacts/dev-depth-logs/` with status `in_progress`. Keep the returned
+ID in place of `RUN_ID` below. Serialize helper updates to the same run;
+concurrent turns use separate IDs. The log embeds helper state at its end.
+Do not manually edit that state or store secrets, command output, or full
+prompts in logs.
+
+Record phase boundaries when the work changes phase, not on every tool call:
+
+```sh
+node scripts/dev/dev-depth.mjs phase RUN_ID implementation
+node scripts/dev/dev-depth.mjs phase RUN_ID static-checks
+node scripts/dev/dev-depth.mjs command-start RUN_ID lint 'pnpm exec eslint <edited files>'
+# Execute the actual check, then record its actual exit code.
+node scripts/dev/dev-depth.mjs command-end RUN_ID lint 0
+node scripts/dev/dev-depth.mjs note RUN_ID 'Skipped visual inspection in shallow mode; focused tests cover the changed behavior.'
+node scripts/dev/dev-depth.mjs phase RUN_ID reporting
+node scripts/dev/dev-depth.mjs finish RUN_ID completed
+```
+
+Supported phases: `reading-planning`, `implementation`, `static-checks`,
+`server`, `testing`, `review`, `reporting`, `waiting`. Reenter phases as needed.
+Use `server` for startup/cleanup, not the whole period a server remains alive.
+Enter `waiting` around user/approval waits when the tools permit recording
+those boundaries. If an automatic wait prevents measurement, note that limit;
+do not invent a duration. Finalize immediately before the final response and
+note that response delivery after finalization is outside the measured period.
+
+Use a unique command ID for each check attempt. Record individual check start
+and end times, including failures and retries. Start/end multiple command IDs
+with serialized helper calls around parallel checks. Command durations may
+overlap; they are diagnostic detail and must not be summed into total elapsed
+time. Phases partition the measured turn; waiting is reported separately.
+Reading/planning and implementation measure elapsed time, not active reasoning.
+Record depth overrides, skipped checks, and timing gaps using `note`.
+
+Finish with `completed`, `blocked`, `cancelled`, or `failed` as appropriate.
+Record actual outcomes for pending commands before finalizing. Interrupted
+runs remain `in_progress` at their last recorded event. Do not fabricate their
+end time or merge them into the next run. The rule and helper provide an
+instruction-based workflow; no provider lifecycle hooks enforce it. If logging
+fails, report the gap and continue the requested implementation without
+claiming complete timing evidence.
