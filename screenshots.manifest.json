@@ -25,5 +25,6 @@
   "demos/024-signup-split": "2a2f7c2c24e599c5ddd67cc16d2ed4f5043ecaed3034850d65d966986f075c77",
   "demos/025-sidebar-standard-left": "6584f760242f82ead430f0a95441279ee090cb22f6fb193f1a92b068e125722d",
   "demos/026-sidebar-inset-left": "4a69c4177230e46d8627d1aabe724c748b724c6d0aabd81b99d2f7976f01aea2",
-  "demos/027-sidebar-floating-left": "74a0d317966bb902233cb57924d32cfe1ed53b5641f6142ce0e98214e00e4b28"
+  "demos/027-sidebar-floating-left": "74a0d317966bb902233cb57924d32cfe1ed53b5641f6142ce0e98214e00e4b28",
+  "demos/028-sidebar-standard-right": "418cec66fdf75a08ce1bdeec13db1a9bf99ccd2da7a80dc550100fdf45a71820"
 }
