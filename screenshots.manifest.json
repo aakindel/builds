@@ -11,5 +11,6 @@
   "demos/010-login-remember": "d2c4328d3d23b435a1c7ee6417fae05eceecf26a70b529df8d34f8fb32d578ba",
   "demos/011-login-minimal": "965e3a89108da2f28b1e5e965e75c4253fecaf9651dc812b560ff99def61c653",
   "demos/012-login-split": "dd65403c8f7450cb646b14605d56f4904a10ebf52d3bf3208f3223dba083cc52",
-  "demos/013-signup-standard": "3acba3a4f055674c45d9f25091f42e1a2f36df57b67134f41277f223e63f8392"
+  "demos/013-signup-standard": "3acba3a4f055674c45d9f25091f42e1a2f36df57b67134f41277f223e63f8392",
+  "demos/014-signup-password-checklist": "a88edb18d4134e4778adbab8976e38c0398f752fb4f73eac883ba05b15fdd490"
 }

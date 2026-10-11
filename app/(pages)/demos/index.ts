@@ -66,6 +66,11 @@ const DEMO_PAGE_ITEMS = [
     slug: "013-signup-standard",
     hasScreenshot: true,
   },
+  {
+    title: "Signup password checklist",
+    slug: "014-signup-password-checklist",
+    hasScreenshot: true,
+  },
 ] as const satisfies Omit<DemoPageItemType, "href">[];
 
 export const DEMO_PAGES = DEMO_PAGE_ITEMS.map((page) => ({
