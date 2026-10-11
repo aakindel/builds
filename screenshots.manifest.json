@@ -30,5 +30,6 @@
   "demos/029-sidebar-inset-right": "bc7c8d1939e48ff142cae42dff84e2430b7fc31435019828a1c62824a83aac3f",
   "demos/030-sidebar-floating-right": "95f31225eb4162bba8e8873bdb7ca4f75db68571afeba88d5de80a9a40efab8c",
   "demos/031-sidebar-standard-dual": "8dfc841026ad011ec70e38a7ed458e9b61e7fab93120e7b4bfadcae516018603",
-  "demos/032-sidebar-inset-dual": "d6e89bbe9c3c1f2e27c37232b4a059161ebd9505d2bd658d1c8eacf49931cdda"
+  "demos/032-sidebar-inset-dual": "d6e89bbe9c3c1f2e27c37232b4a059161ebd9505d2bd658d1c8eacf49931cdda",
+  "demos/033-sidebar-floating-dual": "1d5e0a18aef2e6e7b94c2914e6c25fa58c4973040e7c47e91fad899fcdbc84fe"
 }

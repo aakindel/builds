@@ -86,7 +86,7 @@ const DemoItem = ({
           target="_blank"
           rel="noopener noreferrer"
           data-slot="demo-link"
-          className="min-w-0 flex-1 after:absolute after:inset-(--ui-demo-grid-p) after:z-1 focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:outline-none"
+          className="min-w-0 flex-1 after:absolute after:inset-0 after:z-1 focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:outline-none"
         >
           <DemoItemTitle title={titleCaseTitle} />
         </Link>

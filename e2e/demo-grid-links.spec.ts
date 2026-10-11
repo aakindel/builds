@@ -78,12 +78,6 @@ for (const width of [375, 1280]) {
             "class",
             "group/basic-demo-page relative before:absolute before:-inset-3 before:z-0 before:rounded-6xl before:bg-neutral-100/70 before:opacity-0 hover:before:opacity-100 dark:before:bg-neutral-900/70"
           );
-          const demoLink = element.querySelector("a");
-          if (demoLink)
-            demoLink.classList.replace(
-              "after:inset-(--ui-demo-grid-p)",
-              "after:inset-0"
-            );
         })
       );
       expect(
@@ -115,6 +109,87 @@ for (const width of [375, 1280]) {
       }
     });
   }
+}
+
+for (const width of [375, 1280]) {
+  test(`the full hover area opens the demo and preserves the source target at ${width}px without JavaScript`, async ({
+    browser,
+    baseURL,
+  }) => {
+    const context = await browser.newContext({
+      baseURL,
+      javaScriptEnabled: false,
+      viewport: { width, height: 900 },
+    });
+    try {
+      const page = await context.newPage();
+      await page.goto("/");
+      const card = page.locator('[class~="group/basic-demo-page"]').first();
+      const demo = card.locator('[data-slot="demo-link"]');
+      const source = card.getByRole("link", {
+        name: "View Login Standard on GitHub",
+        exact: true,
+      });
+      const bounds = await card.boundingBox();
+      const title = await demo.locator("p").boundingBox();
+      const preview = await card.locator(":scope > div").first().boundingBox();
+      const sourceBounds = await source.boundingBox();
+      if (!bounds || !title || !preview || !sourceBounds)
+        throw new Error("Missing demo card bounds");
+      const centerX = bounds.x + bounds.width / 2;
+      const bottom = {
+        x: centerX,
+        y: (title.y + title.height + bounds.y + bounds.height) / 2,
+      };
+      const points = [
+        bottom,
+        { x: centerX, y: bounds.y + 1 },
+        { x: centerX, y: bounds.y + bounds.height - 1 },
+        { x: bounds.x + 1, y: bounds.y + bounds.height / 2 },
+        { x: bounds.x + bounds.width - 1, y: bounds.y + bounds.height / 2 },
+        { x: centerX, y: (preview.y + preview.height + title.y) / 2 },
+        { x: centerX, y: preview.y + preview.height / 2 },
+      ];
+      for (const point of points) {
+        await page.mouse.move(point.x, point.y);
+        await expect(source).toHaveCSS("opacity", "1");
+        expect(
+          await page.evaluate(
+            (point) =>
+              document
+                .elementFromPoint(point.x, point.y)
+                ?.closest("a")
+                ?.getAttribute("href"),
+            point
+          )
+        ).toBe("/demos/001-login-standard");
+      }
+      const popupPromise = page.waitForEvent("popup");
+      await page.mouse.click(bottom.x, bottom.y);
+      const popup = await popupPromise;
+      await expect(popup).toHaveURL(
+        new URL("/demos/001-login-standard", baseURL).href
+      );
+      await popup.close();
+
+      // Intercept the native GitHub navigation before any external request.
+      const sourceURL = await source.getAttribute("href");
+      if (!sourceURL) throw new Error("Missing source URL");
+      await context.route(sourceURL, (route) =>
+        route.fulfill({ contentType: "text/html", body: "Source link target" })
+      );
+      const sourcePopupPromise = page.waitForEvent("popup");
+      await page.mouse.click(
+        sourceBounds.x + sourceBounds.width + 8,
+        sourceBounds.y + sourceBounds.height / 2
+      );
+      const sourcePopup = await sourcePopupPromise;
+      await expect(sourcePopup).toHaveURL(sourceURL);
+      await sourcePopup.close();
+    } finally {
+      await context.close();
+    }
+  });
 }
 
 for (const touch of [false, true]) {
