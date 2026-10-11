@@ -23,5 +23,6 @@
   "demos/022-signup-marketing-checkbox": "6f4febb21d7c9e190c992a9c908ffdfcae66d34c8bc990b88b413b8f81c5403d",
   "demos/023-signup-minimal": "648cac94eb9030644c21a68dc6c70baf01ff1889e3ff9207bc54fed5362c58ed",
   "demos/024-signup-split": "2a2f7c2c24e599c5ddd67cc16d2ed4f5043ecaed3034850d65d966986f075c77",
-  "demos/025-sidebar-standard-left": "6584f760242f82ead430f0a95441279ee090cb22f6fb193f1a92b068e125722d"
+  "demos/025-sidebar-standard-left": "6584f760242f82ead430f0a95441279ee090cb22f6fb193f1a92b068e125722d",
+  "demos/026-sidebar-inset-left": "4a69c4177230e46d8627d1aabe724c748b724c6d0aabd81b99d2f7976f01aea2"
 }
