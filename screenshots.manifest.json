@@ -26,5 +26,6 @@
   "demos/025-sidebar-standard-left": "6584f760242f82ead430f0a95441279ee090cb22f6fb193f1a92b068e125722d",
   "demos/026-sidebar-inset-left": "4a69c4177230e46d8627d1aabe724c748b724c6d0aabd81b99d2f7976f01aea2",
   "demos/027-sidebar-floating-left": "74a0d317966bb902233cb57924d32cfe1ed53b5641f6142ce0e98214e00e4b28",
-  "demos/028-sidebar-standard-right": "418cec66fdf75a08ce1bdeec13db1a9bf99ccd2da7a80dc550100fdf45a71820"
+  "demos/028-sidebar-standard-right": "418cec66fdf75a08ce1bdeec13db1a9bf99ccd2da7a80dc550100fdf45a71820",
+  "demos/029-sidebar-inset-right": "bc7c8d1939e48ff142cae42dff84e2430b7fc31435019828a1c62824a83aac3f"
 }
