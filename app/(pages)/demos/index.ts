@@ -156,6 +156,11 @@ const DEMO_PAGE_ITEMS = [
     slug: "031-sidebar-standard-dual",
     hasScreenshot: true,
   },
+  {
+    title: "Sidebar inset dual",
+    slug: "032-sidebar-inset-dual",
+    hasScreenshot: true,
+  },
 ] as const satisfies Omit<DemoPageItemType, "href">[];
 
 export const DEMO_PAGES = DEMO_PAGE_ITEMS.map((page) => ({
