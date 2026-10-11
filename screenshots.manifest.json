@@ -15,5 +15,6 @@
   "demos/014-signup-password-checklist": "a88edb18d4134e4778adbab8976e38c0398f752fb4f73eac883ba05b15fdd490",
   "demos/015-signup-confirm-password": "f24131376ea65908bb3be287e2c7e63dd8fd1cb6925bcf8dd88bb3b0f2831d18",
   "demos/016-signup-social-button-without-divider": "8208d63b71ef98136509f67d1af3963006f7f4577a548a4ca10f8f1afe32a997",
-  "demos/017-signup-social-buttons-row-below-divider": "c7fb4e8b6d7b2da7f8875173282aa87c70c52f1fed193b80d7b9bc9b52593ac3"
+  "demos/017-signup-social-buttons-row-below-divider": "c7fb4e8b6d7b2da7f8875173282aa87c70c52f1fed193b80d7b9bc9b52593ac3",
+  "demos/018-signup-social-icon-buttons-row-below-divider": "1bac3402648b43c7b13ad8360a52b3f776c87b1eec79ba6d89b5356753dc3c57"
 }
