@@ -91,6 +91,11 @@ const DEMO_PAGE_ITEMS = [
     slug: "018-signup-social-icon-buttons-row-below-divider",
     hasScreenshot: true,
   },
+  {
+    title: "Signup combined card",
+    slug: "019-signup-combined-card",
+    hasScreenshot: true,
+  },
 ] as const satisfies Omit<DemoPageItemType, "href">[];
 
 export const DEMO_PAGES = DEMO_PAGE_ITEMS.map((page) => ({
