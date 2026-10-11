@@ -8,5 +8,6 @@
   "demos/007-login-combined-card": "017befd5a8558df4208edbc7449349523e0658dfa227759136a29f20d6678b40",
   "demos/008-login-separated-card": "fea1eae852c5501d8c2c547096c5e81e32d7ccb1f0aed0a8b1f107acb1382d1d",
   "demos/009-login-split-card": "fcd8c7ec59524b8554a62587b0c98fa9c19740d97982c6721282c91015706ca4",
-  "demos/010-login-remember": "d2c4328d3d23b435a1c7ee6417fae05eceecf26a70b529df8d34f8fb32d578ba"
+  "demos/010-login-remember": "d2c4328d3d23b435a1c7ee6417fae05eceecf26a70b529df8d34f8fb32d578ba",
+  "demos/011-login-minimal": "965e3a89108da2f28b1e5e965e75c4253fecaf9651dc812b560ff99def61c653"
 }

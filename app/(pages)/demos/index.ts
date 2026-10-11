@@ -51,6 +51,11 @@ const DEMO_PAGE_ITEMS = [
     slug: "010-login-remember",
     hasScreenshot: true,
   },
+  {
+    title: "Login minimal",
+    slug: "011-login-minimal",
+    hasScreenshot: true,
+  },
 ] as const satisfies Omit<DemoPageItemType, "href">[];
 
 export const DEMO_PAGES = DEMO_PAGE_ITEMS.map((page) => ({
