@@ -1,6 +1,7 @@
 import "@/app/styles/globals.css";
 
 import { type Metadata } from "next";
+import { APP_ROOT_LAYOUT_CONTAINER_ID } from "@/app/constants";
 import { Providers } from "./providers";
 
 export const metadata: Metadata = {
@@ -14,7 +15,14 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body suppressHydrationWarning>
-        <Providers>{children}</Providers>
+        <Providers>
+          <div
+            id={APP_ROOT_LAYOUT_CONTAINER_ID}
+            className="relative h-full w-full"
+          >
+            {children}
+          </div>
+        </Providers>
       </body>
     </html>
   );
