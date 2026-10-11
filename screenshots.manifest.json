@@ -19,5 +19,6 @@
   "demos/018-signup-social-icon-buttons-row-below-divider": "1bac3402648b43c7b13ad8360a52b3f776c87b1eec79ba6d89b5356753dc3c57",
   "demos/019-signup-combined-card": "11a4105552ffcca37d43dbd8af9751f2860fb45b511dc3581ae3f6b0b3edfb2c",
   "demos/020-signup-separated-card": "43d9e2783384d4b86a9fe93621288502c7dd8951d2113e0be7ab20485547ed81",
-  "demos/021-signup-split-card": "9a9a1d5e41ca0c0224886e63b242e111d39aab1b9c00d3a0aea66e49f3c686d9"
+  "demos/021-signup-split-card": "9a9a1d5e41ca0c0224886e63b242e111d39aab1b9c00d3a0aea66e49f3c686d9",
+  "demos/022-signup-marketing-checkbox": "6f4febb21d7c9e190c992a9c908ffdfcae66d34c8bc990b88b413b8f81c5403d"
 }
