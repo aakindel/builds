@@ -7,7 +7,16 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "prepare": "husky"
+    "prepare": "husky",
+    "scripts:migrate": "node scripts/agents/shared/migrate-script-layout.mjs",
+    "agents:rules": "node --experimental-strip-types --disable-warning=ExperimentalWarning --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/agents/sync/sync-agents-rules.ts",
+    "agents:rules:check": "pnpm agents:rules --check",
+    "agents:providers": "node --experimental-strip-types --disable-warning=ExperimentalWarning --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/agents/sync/sync-agents-providers.ts",
+    "agents:providers:check": "pnpm agents:providers --check",
+    "agents:skills": "node scripts/agents/sync/sync-agent-skills.mjs",
+    "agents:skills:check": "node scripts/agents/sync/sync-agent-skills.mjs --check",
+    "agents:skills:status": "node scripts/agents/sync/sync-agent-skills.mjs --status",
+    "typecheck:agents": "tsc -p tsconfig.agents.json --noEmit --skipLibCheck"
   },
   "dependencies": {
     "@base-ui/react": "^1.8.0",

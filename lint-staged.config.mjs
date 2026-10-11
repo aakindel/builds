@@ -3,6 +3,7 @@
 // Keep lint-staged at 16.4.0. v17 dropped listr2's update renderer and prints
 // every command title expanded, including interpolated file paths.
 
+
 // `pnpm exec` resolves straight to the local bin. `npx` checks the registry
 // first when it cannot find one, which is a network round trip on every hook.
 const lintStagedConfig = {
@@ -18,6 +19,14 @@ const lintStagedConfig = {
   // format markdown, JSON, CSS and SCSS
   "**/*.(md|json|css|scss)": (filenames) =>
     `pnpm exec prettier --write ${filenames.join(" ")}`,
+
+  // Side-effect files (AGENTS.md, .cursor) need explicit `git add`. Husky runs
+  // lint-staged with --concurrent false so those adds do not race the index.
+  // Side-effect files (AGENTS.md, .cursor, .claude/rules) need explicit `git add`.
+  "{.agents/environment.json,package.json}": () => "node scripts/agents/sync/agent-projections.mjs runtime",
+  ".agents/rules/**": () => "node scripts/agents/sync/agent-projections.mjs rules",
+  ".agents/sync-policy.json": () => "node scripts/agents/sync/agent-projections.mjs providers",
+  ".agents/hooks/**": () => "node scripts/agents/sync/agent-projections.mjs providers",
 };
 
 export default lintStagedConfig;

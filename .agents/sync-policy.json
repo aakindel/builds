@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "description": "Agent sync policy. Source of truth for provider hooks, Cursor, Claude, and Codex permissions, and Claude settings. Codex permissions are user-owned and are not written to a Codex file. Run pnpm agents:providers. Do not edit .cursor, .claude, .codex, or CLAUDE.md outputs by hand.",
+  "hooks": [],
+  "settings": {
+    "claude": {
+      "attribution": { "commit": "", "pr": "" }
+    }
+  }
+}

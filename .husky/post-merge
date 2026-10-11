@@ -1,0 +1,2 @@
+#!/bin/sh
+[ ! -f scripts/agents/sync/sync-agent-skills.mjs ] || node scripts/agents/sync/sync-agent-skills.mjs --hook || true

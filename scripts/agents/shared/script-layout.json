@@ -1,0 +1,950 @@
+{
+  "version": 1,
+  "scripts": {
+    "agent-data.mjs": {
+      "path": "scripts/agents/shared/agent-data.mjs",
+      "legacyHashes": [
+        "954ffbee3161f35791f8165f3d0849cf2bd679ce903e6a5b255ae3e24a50ca50",
+        "f3d757fc1cd19a6c54cc725b61ec06dcf17f11fc53c105614523ad3eff3a499d"
+      ]
+    },
+    "agent-data.test.mjs": {
+      "path": "scripts/agents/shared/agent-data.test.mjs",
+      "legacyHashes": [
+        "f36057d0cef0806ffa941084c915f103cc6fac9da6cfe08a060d8fa8fb8c173e"
+      ]
+    },
+    "agent-dev-stop.sh": {
+      "path": "scripts/dev/agent-dev-stop.sh",
+      "legacyHashes": [
+        "c0267e9faf741e9ba2f65a1147dc7683776eaf12959888d74e4a20cc5f61a4f6"
+      ]
+    },
+    "agent-dev.sh": {
+      "path": "scripts/dev/agent-dev.sh",
+      "legacyHashes": [
+        "a12fc8b37942177954d4b7582264b803f71e94f328f9b02f972b2a3cafd8e914",
+        "0ab125b376ff82162e0d4b337be5b0c3a3c0d5b320b0d2c129a6fd6b1f536dc2",
+        "27dfb64baccd5ae4c0939f7b537988f91a0146dd87490cdbfcb61e609be41631"
+      ],
+      "dependencies": [
+        "browser-state.mjs",
+        "browser-compatibility.mjs",
+        "browser-prepare.mjs",
+        "browser-adapters.mjs",
+        "verification-lifecycle.mjs",
+        "verification-lifecycle.sh",
+        "convex-asset.mjs",
+        "runtime-servers.cjs",
+        "runtime-servers.d.cts"
+      ]
+    },
+    "agent-environment-install.test.mjs": {
+      "path": "scripts/agents/cloud/agent-environment-install.test.mjs",
+      "legacyHashes": [
+        "18cefb891a017e3c8a9c0198167de86f3db46c43cbc8cd97ffeb4cb7e114a8fe"
+      ]
+    },
+    "agent-environment.mjs": {
+      "path": "scripts/agents/cloud/agent-environment.mjs",
+      "legacyHashes": [
+        "244cf17b10be2ab786d1103c1bc2c00644ee1948fcd4035afd7a861ef51e2455"
+      ]
+    },
+    "agent-environment.test.mjs": {
+      "path": "scripts/agents/cloud/agent-environment.test.mjs",
+      "legacyHashes": [
+        "85f785de5001b6f0397f243f2398978e3043a4c790c7390ea96d9c03fd339f1c"
+      ]
+    },
+    "agent-host-git.mjs": {
+      "path": "scripts/agents/host/agent-host-git.mjs",
+      "legacyHashes": [
+        "2c70df614fe8ab58800678b2aee2e8617c5ac805d619f5e4dc42346d1ca15727"
+      ]
+    },
+    "agent-host-install.mjs": {
+      "path": "scripts/agents/host/agent-host-install.mjs",
+      "legacyHashes": [
+        "5a85a236d76455e116232b258e2c00bdf4e841c05b2c725e7114548372e77d26"
+      ]
+    },
+    "agent-host-machine.mjs": {
+      "path": "scripts/agents/host/agent-host-machine.mjs",
+      "legacyHashes": [
+        "90854964b859ba9d254fcb787491061400653b2750f049feb3815b400eea49f2"
+      ]
+    },
+    "agent-host-process.mjs": {
+      "path": "scripts/agents/host/agent-host-process.mjs",
+      "legacyHashes": [
+        "27962d68cfe8342076eaac95f0d62fce2f97f9747ddd300230a1f8d9514d1422"
+      ]
+    },
+    "agent-host-process.test.mjs": {
+      "path": "scripts/agents/host/agent-host-process.test.mjs",
+      "legacyHashes": [
+        "c1c3412b4b2d9b606bbb6aa25bf20e2e0dcfb45ea3bff75bc41d6fdd51181fd3"
+      ]
+    },
+    "agent-host-queue.mjs": {
+      "path": "scripts/agents/host/agent-host-queue.mjs",
+      "legacyHashes": [
+        "68bc739330ecc34bfe2cdd4fe51e7ac85d448ebf9e1bad6bf7b37af997a061ff"
+      ]
+    },
+    "agent-host-queue.test.mjs": {
+      "path": "scripts/agents/host/agent-host-queue.test.mjs",
+      "legacyHashes": [
+        "b855d168ac8c92ada10738b552d48675145672dca7b1a51574820a313a2881bf"
+      ]
+    },
+    "agent-host-release.mjs": {
+      "path": "scripts/agents/host/agent-host-release.mjs",
+      "legacyHashes": [
+        "1f793dacf097ba237bf546b7f3c8d28e3c54cdc1adf47982b40b4c6583c12ccf"
+      ]
+    },
+    "agent-host-review.mjs": {
+      "path": "scripts/agents/host/agent-host-review.mjs",
+      "legacyHashes": [
+        "e7160246256cbe562d640baf47fe1596270778a65ea03ecc7e0433bae8d01e86"
+      ]
+    },
+    "agent-host-runner.mjs": {
+      "path": "scripts/agents/host/agent-host-runner.mjs",
+      "legacyHashes": [
+        "c7175fe69c09be9e3162a517a79704b2db469d234b06d3fbefcfed93184266d9"
+      ]
+    },
+    "agent-host-sandbox.mjs": {
+      "path": "scripts/agents/host/agent-host-sandbox.mjs",
+      "legacyHashes": [
+        "f408319295503132f31792f76396712e36a55e2ae513e73cc2f600adad70c527"
+      ]
+    },
+    "agent-host-service.test.mjs": {
+      "path": "scripts/agents/host/agent-host-service.test.mjs",
+      "legacyHashes": [
+        "144070508f5e263abe33046ba8fbb518634cb65c07b5d610b00535e69ec8bc27"
+      ]
+    },
+    "agent-host.test.mjs": {
+      "path": "scripts/agents/host/agent-host.test.mjs",
+      "legacyHashes": [
+        "230eb0b2f4d867784ef2699e485877771c921e96d951bc4a16b970fe9fd43b1a"
+      ]
+    },
+    "agent-machine-client.mjs": {
+      "path": "scripts/agents/host/agent-machine-client.mjs",
+      "legacyHashes": [
+        "be745e34bea6275b57b733dc2da27331c5e4fc85c43a5869e733ba7fa7acf862"
+      ]
+    },
+    "agent-pre-push.mjs": {
+      "path": "scripts/agents/host/agent-pre-push.mjs",
+      "legacyHashes": [
+        "96df2a1c029fa5ab517890a533ddd2210982f99c37da703648f7c116b29791bd"
+      ]
+    },
+    "agent-projections.mjs": {
+      "path": "scripts/agents/sync/agent-projections.mjs",
+      "legacyHashes": [
+        "8f4408fbb62227b43ad03baa5e050b057af900a8ec7bab23becd5b36d9b81366"
+      ]
+    },
+    "agent-projections.test.mjs": {
+      "path": "scripts/agents/sync/agent-projections.test.mjs",
+      "legacyHashes": [
+        "137a8cf08c9ae73ed205de42245ce950485401edc8a81b923bb16bad531ef997"
+      ]
+    },
+    "agent-runtime-config.sh": {
+      "path": "scripts/agents/runtime/agent-runtime-config.sh",
+      "legacyHashes": [
+        "332ffcc82da2e2ad9d330f1a4cc5da9b161eb0e1d821886bf1094b8fb43d19a2"
+      ]
+    },
+    "agent-runtime-download.sh": {
+      "path": "scripts/agents/runtime/agent-runtime-download.sh",
+      "legacyHashes": [
+        "2788dcc4c8a46af0b92fc0a6d2bc289a0119e1ffbea6f5d54d9c2094320f3d3f"
+      ]
+    },
+    "agent-runtime-download.test.mjs": {
+      "path": "scripts/agents/runtime/agent-runtime-download.test.mjs",
+      "legacyHashes": [
+        "dd288260d79d973837265bb973afeb0930b747c5b83fcab14028cfca0e314c35"
+      ]
+    },
+    "agent-runtime.mjs": {
+      "path": "scripts/agents/runtime/agent-runtime.mjs",
+      "legacyHashes": [
+        "5655ae30f402dcc60448fb980160b863ad5731fc7b5c588463e1498113f98005",
+        "6b9c54b1a21bfb842f3098731c19f0a64e882ee723fefdb4550516d25f84afdc"
+      ]
+    },
+    "agent-runtime.test.mjs": {
+      "path": "scripts/agents/runtime/agent-runtime.test.mjs",
+      "legacyHashes": [
+        "64a0a3e24cdf0d391faef36e8583661d910b86291d94ede720e4546c4304d41c"
+      ]
+    },
+    "agent-server.test.mjs": {
+      "path": "scripts/dev/agent-server.test.mjs",
+      "legacyHashes": [
+        "6dc3c81272a186d93c6fa2cfded0634a142ae5c60600eb0b69da7e1bcb33d3fb"
+      ]
+    },
+    "agent-verify.mjs": {
+      "path": "scripts/verification/agent-verify.mjs",
+      "legacyHashes": [
+        "b703a96b97f9b3cea37f77e90c038b17c558d4a5c3db507af613573d1a2f74a1",
+        "97fef0cdc287d72e659d604e33471fec29a2f45fe4ac4ff116385ea58aab9311"
+      ],
+      "dependencies": [
+        "browser-session.mjs",
+        "browser-session.d.mts",
+        "browser-spawn-tracker.mjs",
+        "browser-workflow.mjs",
+        "verification-process.mjs",
+        "browser-state.mjs",
+        "browser-compatibility.mjs",
+        "browser-prepare.mjs",
+        "browser-adapters.mjs",
+        "verification-lifecycle.mjs",
+        "verification-lifecycle.sh",
+        "convex-asset.mjs",
+        "runtime-servers.cjs",
+        "runtime-servers.d.cts"
+      ]
+    },
+    "agent-verify.test.mjs": {
+      "path": "scripts/verification/agent-verify.test.mjs",
+      "legacyHashes": [
+        "fce970695136ca91797d51b32d74df7f4ee8e0a74188874e33e159f15c4fa6a6",
+        "d75640a70203e260cb385a8e4a50c06397aaa4cb9d4c86c57b6ea709a100c731"
+      ]
+    },
+    "agent-worktree-context.mjs": {
+      "path": "scripts/agents/worktrees/agent-worktree-context.mjs",
+      "legacyHashes": [
+        "978f7b427f82486e25791acb39bda9835c9dbd3fabb5cf5082c5ad348e8786d9"
+      ]
+    },
+    "agent-worktree-policy.mjs": {
+      "path": "scripts/agents/worktrees/agent-worktree-policy.mjs",
+      "legacyHashes": [
+        "6f4926fdaba5abbd82d14bd9fbe734b170320c58cf2c231c5bfcf72df015f8fd"
+      ]
+    },
+    "agent-worktrees.mjs": {
+      "path": "scripts/agents/worktrees/agent-worktrees.mjs",
+      "legacyHashes": [
+        "efbd31b1e43805d92b4fde35602c643147e1d1349537a440d8adbb940b4a3ed2"
+      ]
+    },
+    "agent-worktrees.test.mjs": {
+      "path": "scripts/agents/worktrees/agent-worktrees.test.mjs",
+      "legacyHashes": [
+        "2b5c2d2a4ca413a01a55ca2da6cfb1a452738305496b99cc192492c9e07ddb3b"
+      ]
+    },
+    "browser-preflight.d.mts": {
+      "path": "scripts/verification/browser-preflight.d.mts",
+      "legacyHashes": [
+        "fea3335305aa0f9785750ed7427623a60dbe2b91e0088d942b7be7de045fb5cf"
+      ]
+    },
+    "browser-preflight.mjs": {
+      "path": "scripts/verification/browser-preflight.mjs",
+      "legacyHashes": [
+        "3bc835f1b080b3d5129208e6b3a3cef08bbf87f0f7b12ee54e652d62c5469cbc",
+        "0ab27c1770971667b68e7d7b521dd428eeddb0bc1801fa23bc2bb173502af068"
+      ],
+      "dependencies": [
+        "browser-session.mjs",
+        "browser-session.d.mts",
+        "browser-spawn-tracker.mjs",
+        "browser-workflow.mjs",
+        "verification-process.mjs",
+        "agent-verify.mjs",
+        "agent-runtime.mjs",
+        "browser-state.mjs",
+        "browser-compatibility.mjs",
+        "browser-prepare.mjs",
+        "browser-adapters.mjs",
+        "verification-lifecycle.mjs",
+        "verification-lifecycle.sh",
+        "convex-asset.mjs",
+        "runtime-servers.cjs",
+        "runtime-servers.d.cts"
+      ]
+    },
+    "browser-preflight.test.mjs": {
+      "path": "scripts/verification/browser-preflight.test.mjs",
+      "legacyHashes": [
+        "1bcf6140b8350570143d533b4f2fd399e77aa20a42933fd0e020466c186b5446",
+        "3b9d15411b7a17d02ccf628af28d52cd3b573434804ae6c4c0b7ea8e84701a72"
+      ]
+    },
+    "clean-dev-cache.sh": {
+      "path": "scripts/dev/clean-dev-cache.sh",
+      "legacyHashes": [
+        "6d6446e1f3ac87b31626d9e6620a96aa38ff6c6712dc774cb2a016506a8e9d46"
+      ]
+    },
+    "cloud-session.mjs": {
+      "path": "scripts/agents/cloud/cloud-session.mjs",
+      "legacyHashes": [
+        "a1cbd005775604d01f17a617f6aa8694736ea7d0758b99f29ed8ffcfa4a6d8c2"
+      ]
+    },
+    "cloud-session.test.mjs": {
+      "path": "scripts/agents/cloud/cloud-session.test.mjs",
+      "legacyHashes": [
+        "6da4f560ee16c951ac61f9d53267c6fc0fb752b01247080e3d00bb6476c6ad8f"
+      ]
+    },
+    "cloud-setup.sh": {
+      "path": "scripts/agents/cloud/cloud-setup.sh",
+      "legacyHashes": [
+        "1f0d404c5256dccacb7c773b2a02b1792e743c196c54c5ba61b4d2c9751b9301"
+      ]
+    },
+    "cloud-task.sh": {
+      "path": "scripts/agents/cloud/cloud-task.sh",
+      "legacyHashes": [
+        "b3717690234c97ce1f5fcb97ca10dead44b7241d5faa650edde3c75b750687a2"
+      ]
+    },
+    "dev-depth-worktrees.test.mjs": {
+      "path": "scripts/dev/dev-depth-worktrees.test.mjs",
+      "legacyHashes": [
+        "6f5649c97a9a6d1da798a79083fe0344a0dcc8de55a25f64d6f53794c533b544"
+      ]
+    },
+    "dev-depth.mjs": {
+      "path": "scripts/dev/dev-depth.mjs",
+      "legacyHashes": [
+        "adca61a762903378382317fb663df07e398ac5b50d3089bd7ed7ed3cd9f21320"
+      ]
+    },
+    "dev-depth.test.mjs": {
+      "path": "scripts/dev/dev-depth.test.mjs",
+      "legacyHashes": [
+        "942d82f512ff93df908bcfcf2c5a03cb5a1912b8a9b91c689d21a7eb110103fb"
+      ]
+    },
+    "dev.sh": {
+      "path": "scripts/dev/dev.sh",
+      "legacyHashes": [
+        "6d357548dc41598a989e2bf2bb7d0750dc2094b393f5591ff943ee8dc998ca45",
+        "cd0edc2428ca01f2eb82eb741d202858bb68bd907a5cd0bd4f0481e83f14757e",
+        "192ce6f01d3691fe8297dbe295c508fd3cc7ac35ec45c63ada4c726e5105bf6c"
+      ]
+    },
+    "docs-markdown-install.json": {
+      "path": "scripts/docs/docs-markdown-install.json",
+      "legacyHashes": [
+        "9602ac5416d3d4dd266e7773a8743e430c798b2c49800c9c4c1b7d4bf253197e"
+      ]
+    },
+    "docs-markdown-plugin.mjs": {
+      "path": "scripts/docs/docs-markdown-plugin.mjs",
+      "legacyHashes": [
+        "737e42bea6eb0714aca67d390afa9afbe7ff2383ae7680d09e0c665dbdfc8d12"
+      ]
+    },
+    "docs-markdown.mjs": {
+      "path": "scripts/docs/docs-markdown.mjs",
+      "legacyHashes": [
+        "df34f907c2450d3d3a50475f8136594d00f4f16c03159680f3e2c12242474724"
+      ]
+    },
+    "e2e-launcher.test.mjs": {
+      "path": "scripts/verification/e2e-launcher.test.mjs",
+      "legacyHashes": [
+        "f72c11b038d361c24be3b811b5f73d4f98dafb57d5bad16d00bd94035147cec0"
+      ]
+    },
+    "e2e-run.sh": {
+      "path": "scripts/verification/e2e-run.sh",
+      "legacyHashes": [
+        "6585322b3855ce554c8584122000f2ccf06c7d4dab212bc6c3b4c6b4e7ca610b",
+        "e8fef8b740e0f7e37467e0166d9b3ab8bfea8c0955fe67cd5ce786de0346c448"
+      ],
+      "dependencies": [
+        "browser-state.mjs",
+        "browser-compatibility.mjs",
+        "browser-prepare.mjs",
+        "browser-adapters.mjs",
+        "verification-lifecycle.mjs",
+        "verification-lifecycle.sh",
+        "convex-asset.mjs",
+        "runtime-servers.cjs",
+        "runtime-servers.d.cts"
+      ]
+    },
+    "e2e-stub-network-interfaces.cjs": {
+      "path": "scripts/verification/e2e-stub-network-interfaces.cjs",
+      "legacyHashes": [
+        "a4b5add1c845197c203cbb26a64d6b4c7a64decab936fd20adffe032af1b6d3f"
+      ]
+    },
+    "e2e-web-server.sh": {
+      "path": "scripts/verification/e2e-web-server.sh",
+      "legacyHashes": [
+        "d77e2abb439dc716cacfcf6924c92d60d2218b08d098f712b8675d0be9e8fd6f",
+        "be2583af8bb1f955c1966922cf3f1b57a53362df4e14d079cafced635b7a85f6",
+        "af45986dc0c38ea75ec7d5aea7755b313159501452a4ee1bfd97bab78466d96d"
+      ],
+      "dependencies": [
+        "browser-state.mjs",
+        "browser-compatibility.mjs",
+        "browser-prepare.mjs",
+        "browser-adapters.mjs",
+        "verification-lifecycle.mjs",
+        "verification-lifecycle.sh",
+        "convex-asset.mjs",
+        "runtime-servers.cjs",
+        "runtime-servers.d.cts"
+      ]
+    },
+    "lint-coverage.test.mjs": {
+      "path": "scripts/checks/lint-coverage.test.mjs",
+      "legacyHashes": [
+        "78c09cb9191cb857c47ae5b4837bed815f1ed6e987e6a8d018ed103806708fa5"
+      ]
+    },
+    "rsync-editor-settings.mjs": {
+      "path": "scripts/editors/rsync-editor-settings.mjs",
+      "legacyHashes": [
+        "df9085a755856a42cd951bd3a3dedc944b6586f49fc26b15922a7500d11430d1"
+      ]
+    },
+    "runtime-servers.d.mts": {
+      "path": "scripts/dev/runtime-servers.d.mts",
+      "legacyHashes": [
+        "1cad069f47c10357de7ccabcf09ce5de79be83f7cd50c2cef72f481c197c0780"
+      ]
+    },
+    "runtime-servers.mjs": {
+      "path": "scripts/dev/runtime-servers.mjs",
+      "legacyHashes": [
+        "56ee8d79311c8556a7e9c80cd9ce5cffc98bdc15d08f7b0133c40172caad4b92",
+        "e00e72a95511029e7ed1d5d707151b6069eb98f7bd7d4221d9094e5d34cba27f",
+        "b05667fd68c7d0065ab819e6ff82bc57141cfe2664a39e434884cc3c4650397d"
+      ],
+      "dependencies": ["runtime-servers.cjs"]
+    },
+    "runtime-servers.test.mjs": {
+      "path": "scripts/dev/runtime-servers.test.mjs",
+      "legacyHashes": [
+        "094c7fd5c9715bb5ae82abae2adc2238202032e7f74498ede05615f086a81e9b"
+      ]
+    },
+    "screenshot.ts": {
+      "path": "scripts/verification/screenshot.ts",
+      "legacyHashes": [
+        "e2e0516d0fc3e83bee4b82720ea4bc77c268a2534df37a2c7a3256da9154c538"
+      ]
+    },
+    "sync-agents-providers.test.mjs": {
+      "path": "scripts/agents/sync/sync-agents-providers.test.mjs",
+      "legacyHashes": [
+        "40e3da2ac977b20d66596cb65805a0070f5a4b9636e31fdee22a4c338d955c0c"
+      ]
+    },
+    "sync-agents-providers.ts": {
+      "path": "scripts/agents/sync/sync-agents-providers.ts",
+      "legacyHashes": [
+        "fb1a576becd1e312f9af81efdd33868bb1eb9b852199498a9cd8a53f9eb52c12"
+      ]
+    },
+    "sync-agents-rules.ts": {
+      "path": "scripts/agents/sync/sync-agents-rules.ts",
+      "legacyHashes": [
+        "30a8193bee27122129fd05f11e86238c2a1f9cf854c6b77b33eea009b449f212"
+      ]
+    },
+    "vscursor-claudex-check.mjs": {
+      "path": "scripts/editors/vscursor-claudex/vscursor-claudex-check.mjs",
+      "legacyHashes": [
+        "8a90b21fb5a93d4a8f9d10b3da139e500afdc56092ef5d21dd4545547c5dc535"
+      ],
+      "dependencies": [
+        "browser-workflow.mjs",
+        "verification-process.mjs",
+        "browser-session.mjs",
+        "browser-spawn-tracker.mjs",
+        "vscursor-claudex-browser-check.mjs",
+        "agent-verify.mjs"
+      ]
+    },
+    "vscursor-claudex-codex-runtime-check.mjs": {
+      "path": "scripts/editors/vscursor-claudex/vscursor-claudex-codex-runtime-check.mjs",
+      "legacyHashes": [
+        "c233fa76aaf3a639884db31ee1eb006809f61df24805dadff299f9b36168b6cc"
+      ]
+    },
+    "vscursor-claudex-codex-runtime-check.test.mjs": {
+      "path": "scripts/editors/vscursor-claudex/vscursor-claudex-codex-runtime-check.test.mjs",
+      "legacyHashes": [
+        "2ac8d980a0ef508bc43f7753b852cf6ae281cac785ffe5cbab3b302d5cb0093b"
+      ]
+    },
+    "vscursor-claudex-composer-capture.mjs": {
+      "path": "scripts/editors/vscursor-claudex/vscursor-claudex-composer-capture.mjs",
+      "legacyHashes": [
+        "48b4d204b4c3d035f745fbd0f3ab6c9f15749dd8ab2242dda1c94b348e0db9ba"
+      ]
+    },
+    "vscursor-claudex-composer-capture.test.mjs": {
+      "path": "scripts/editors/vscursor-claudex/vscursor-claudex-composer-capture.test.mjs",
+      "legacyHashes": [
+        "16ebe5d1eae92272a57549d92af178c92f28a676fbd7be75921fbcbd9adc9ab8"
+      ]
+    },
+    "vscursor-claudex-composer-e2e-evidence.mjs": {
+      "path": "scripts/editors/vscursor-claudex/vscursor-claudex-composer-e2e-evidence.mjs",
+      "legacyHashes": [
+        "f4f12cee3063cc1304ee08864e7f0cefe7af5b5d19289837f1230ec6fb04e76f"
+      ]
+    },
+    "vscursor-claudex-composer-e2e.mjs": {
+      "path": "scripts/editors/vscursor-claudex/vscursor-claudex-composer-e2e.mjs",
+      "legacyHashes": [
+        "b7c22dfa3dfc518853fb18166109b76d1f7d9d61be75c68e7318e3a863d6f81f"
+      ]
+    },
+    "vscursor-claudex-parser-sync.mjs": {
+      "path": "scripts/editors/vscursor-claudex/vscursor-claudex-parser-sync.mjs",
+      "legacyHashes": [
+        "34935f434a3c0a03ed7f76e3d0c5a1dde05754ed06f45fd1f904bfe9f380044f"
+      ]
+    },
+    "vscursor-claudex-scope-check.mjs": {
+      "path": "scripts/editors/vscursor-claudex/vscursor-claudex-scope-check.mjs",
+      "legacyHashes": [
+        "c30cd9a9f6fb1c235a46ca71c4e46a25f61375cc14944fb4ca8c7a42a4609b97"
+      ]
+    },
+    "vscursor-claudex-scope-inputs.mjs": {
+      "path": "scripts/editors/vscursor-claudex/vscursor-claudex-scope-inputs.mjs",
+      "legacyHashes": [
+        "5dff65b1dcb9d577df8ee9cd667d25e62a99d2de9ea3ee7d9b468a14b4e7d10e"
+      ]
+    },
+    "vscursor-claudex-scope-inputs.test.mjs": {
+      "path": "scripts/editors/vscursor-claudex/vscursor-claudex-scope-inputs.test.mjs",
+      "legacyHashes": [
+        "96f69ad0882c8161b46c64a389397ba24def57ffe8c86c3113bbaab4a4a7e904"
+      ]
+    },
+    "convex-snapshot.sh": {
+      "path": "scripts/dev/convex-snapshot.sh",
+      "legacyHashes": [
+        "9867b4be110591cc80d8d57aba0b04cd1ff3ce29bd25821a9e5de7c0b35c45ad"
+      ]
+    },
+    "resolve-convex-agent.ts": {
+      "path": "scripts/dev/resolve-convex-agent.ts",
+      "legacyHashes": [
+        "6633e12e7586b7ae82df8641b556c1f1293face39cc0b7b5da365f46d449c2ba"
+      ]
+    },
+    "resolve-convex-dev.ts": {
+      "path": "scripts/dev/resolve-convex-dev.ts",
+      "legacyHashes": []
+    },
+    "ephemeral-convex-sweep.sh": {
+      "path": "scripts/dev/ephemeral-convex-sweep.sh",
+      "legacyHashes": [
+        "c76e57157167313529f99d1a42ba9c867dcbce607de565536a42c0087e683016"
+      ]
+    },
+    "e2e-convex-backend.sh": {
+      "path": "scripts/verification/e2e-convex-backend.sh",
+      "legacyHashes": []
+    },
+    "script-layout.mjs": {
+      "path": "scripts/agents/shared/script-layout.mjs",
+      "legacyHashes": []
+    },
+    "script-layout.json": {
+      "path": "scripts/agents/shared/script-layout.json",
+      "legacyHashes": []
+    },
+    "migrate-script-layout.mjs": {
+      "path": "scripts/agents/shared/migrate-script-layout.mjs",
+      "legacyHashes": []
+    },
+    "browser-session.mjs": {
+      "path": "scripts/verification/browser-session.mjs",
+      "legacyHashes": [
+        "3d1306df2af1260b8be37456359cbaba0271cfa139d4b7c2fe0f782bdc6d173d"
+      ],
+      "dependencies": [
+        "browser-state.mjs",
+        "browser-compatibility.mjs",
+        "browser-prepare.mjs",
+        "browser-adapters.mjs",
+        "verification-lifecycle.mjs",
+        "verification-lifecycle.sh",
+        "convex-asset.mjs",
+        "runtime-servers.cjs",
+        "runtime-servers.d.cts"
+      ]
+    },
+    "browser-session.d.mts": {
+      "path": "scripts/verification/browser-session.d.mts",
+      "legacyHashes": [
+        "9cefd6d74d5838d3d4951b02b4109931f323c5c034d7ac48dd3d9a522c5974a7"
+      ]
+    },
+    "browser-workflow.mjs": {
+      "path": "scripts/verification/browser-workflow.mjs",
+      "legacyHashes": [
+        "45279e0f9ad319b89f938509f9084c40fe68dc45d1475a7bd852df681d49d932",
+        "f3bd30ac3588ca0a64fd96b80e9415ae6463597ffa8841a3cd6b0fe8a44b369c"
+      ],
+      "dependencies": [
+        "agent-runtime.mjs",
+        "browser-state.mjs",
+        "browser-compatibility.mjs",
+        "browser-prepare.mjs",
+        "browser-adapters.mjs",
+        "verification-lifecycle.mjs",
+        "verification-lifecycle.sh",
+        "convex-asset.mjs",
+        "runtime-servers.cjs",
+        "runtime-servers.d.cts"
+      ]
+    },
+    "browser-workflow.test.mjs": {
+      "path": "scripts/verification/browser-workflow.test.mjs",
+      "legacyHashes": [
+        "d2d133e72ce6ce98ce7fc5b31f6982e2fdde6d77c73033a86508678a7fbaef28",
+        "848415019a377c9176ee94f9162f582c2c2a3bbc671eeeb10ccb81d0749c96d9"
+      ]
+    },
+    "verification-process.mjs": {
+      "path": "scripts/verification/verification-process.mjs",
+      "legacyHashes": [
+        "2430ccdfe5e90adc104eaa6520cfe5dc1a5a7a365872d80025ebedfebe0014ba"
+      ]
+    },
+    "vscursor-claudex-browser-check.mjs": {
+      "path": "scripts/editors/vscursor-claudex/vscursor-claudex-browser-check.mjs",
+      "legacyHashes": []
+    },
+    "browser-spawn-tracker.mjs": {
+      "path": "scripts/verification/browser-spawn-tracker.mjs",
+      "legacyHashes": [
+        "9e2c1d5909d37f3a1177dcabccdd211eefbda6035527fbfb7cf6037c3d769a98"
+      ],
+      "dependencies": [
+        "browser-state.mjs",
+        "browser-compatibility.mjs",
+        "browser-prepare.mjs",
+        "browser-adapters.mjs",
+        "verification-lifecycle.mjs",
+        "verification-lifecycle.sh",
+        "convex-asset.mjs",
+        "runtime-servers.cjs",
+        "runtime-servers.d.cts"
+      ]
+    },
+    "agent-skills-sync.mjs": {
+      "path": "scripts/agents/sync/agent-skills-sync.mjs",
+      "legacyHashes": [],
+      "dependencies": ["agent-data.mjs"]
+    },
+    "sync-agent-skills.mjs": {
+      "path": "scripts/agents/sync/sync-agent-skills.mjs",
+      "legacyHashes": [],
+      "dependencies": ["agent-skills-sync.mjs", "agent-data.mjs"]
+    },
+    "strip-ai-trailers.mjs": {
+      "path": "scripts/agents/sync/strip-ai-trailers.mjs",
+      "legacyHashes": []
+    },
+    "strip-ai-trailers.test.mjs": {
+      "path": "scripts/agents/sync/strip-ai-trailers.test.mjs",
+      "legacyHashes": []
+    },
+    "browser-state.mjs": {
+      "path": "scripts/verification/browser-state.mjs",
+      "legacyHashes": [],
+      "dependencies": [
+        "browser-state.mjs",
+        "browser-compatibility.mjs",
+        "browser-prepare.mjs",
+        "browser-adapters.mjs",
+        "verification-lifecycle.mjs",
+        "verification-lifecycle.sh",
+        "convex-asset.mjs",
+        "runtime-servers.cjs",
+        "runtime-servers.d.cts"
+      ]
+    },
+    "browser-compatibility.mjs": {
+      "path": "scripts/verification/browser-compatibility.mjs",
+      "legacyHashes": [],
+      "dependencies": [
+        "browser-state.mjs",
+        "browser-compatibility.mjs",
+        "browser-prepare.mjs",
+        "browser-adapters.mjs",
+        "verification-lifecycle.mjs",
+        "verification-lifecycle.sh",
+        "convex-asset.mjs",
+        "runtime-servers.cjs",
+        "runtime-servers.d.cts"
+      ]
+    },
+    "browser-prepare.mjs": {
+      "path": "scripts/verification/browser-prepare.mjs",
+      "legacyHashes": [],
+      "dependencies": [
+        "browser-state.mjs",
+        "browser-compatibility.mjs",
+        "browser-prepare.mjs",
+        "browser-adapters.mjs",
+        "verification-lifecycle.mjs",
+        "verification-lifecycle.sh",
+        "convex-asset.mjs",
+        "runtime-servers.cjs",
+        "runtime-servers.d.cts"
+      ]
+    },
+    "browser-adapters.mjs": {
+      "path": "scripts/verification/browser-adapters.mjs",
+      "legacyHashes": [],
+      "dependencies": [
+        "browser-state.mjs",
+        "browser-compatibility.mjs",
+        "browser-prepare.mjs",
+        "browser-adapters.mjs",
+        "verification-lifecycle.mjs",
+        "verification-lifecycle.sh",
+        "convex-asset.mjs",
+        "runtime-servers.cjs",
+        "runtime-servers.d.cts"
+      ]
+    },
+    "verification-lifecycle.mjs": {
+      "path": "scripts/verification/verification-lifecycle.mjs",
+      "legacyHashes": [],
+      "dependencies": [
+        "browser-state.mjs",
+        "browser-compatibility.mjs",
+        "browser-prepare.mjs",
+        "browser-adapters.mjs",
+        "verification-lifecycle.mjs",
+        "verification-lifecycle.sh",
+        "convex-asset.mjs",
+        "runtime-servers.cjs",
+        "runtime-servers.d.cts"
+      ]
+    },
+    "verification-lifecycle.sh": {
+      "path": "scripts/verification/verification-lifecycle.sh",
+      "legacyHashes": [],
+      "dependencies": [
+        "browser-state.mjs",
+        "browser-compatibility.mjs",
+        "browser-prepare.mjs",
+        "browser-adapters.mjs",
+        "verification-lifecycle.mjs",
+        "verification-lifecycle.sh",
+        "convex-asset.mjs",
+        "runtime-servers.cjs",
+        "runtime-servers.d.cts"
+      ]
+    },
+    "convex-asset.mjs": {
+      "path": "scripts/verification/convex-asset.mjs",
+      "legacyHashes": [],
+      "dependencies": [
+        "browser-state.mjs",
+        "browser-compatibility.mjs",
+        "browser-prepare.mjs",
+        "browser-adapters.mjs",
+        "verification-lifecycle.mjs",
+        "verification-lifecycle.sh",
+        "convex-asset.mjs",
+        "runtime-servers.cjs",
+        "runtime-servers.d.cts"
+      ]
+    },
+    "runtime-servers.cjs": {
+      "path": "scripts/dev/runtime-servers.cjs",
+      "legacyHashes": [],
+      "dependencies": [
+        "browser-state.mjs",
+        "browser-compatibility.mjs",
+        "browser-prepare.mjs",
+        "browser-adapters.mjs",
+        "verification-lifecycle.mjs",
+        "verification-lifecycle.sh",
+        "convex-asset.mjs",
+        "runtime-servers.cjs",
+        "runtime-servers.d.cts"
+      ]
+    },
+    "runtime-servers.d.cts": {
+      "path": "scripts/dev/runtime-servers.d.cts",
+      "legacyHashes": [],
+      "dependencies": [
+        "browser-state.mjs",
+        "browser-compatibility.mjs",
+        "browser-prepare.mjs",
+        "browser-adapters.mjs",
+        "verification-lifecycle.mjs",
+        "verification-lifecycle.sh",
+        "convex-asset.mjs",
+        "runtime-servers.cjs",
+        "runtime-servers.d.cts"
+      ]
+    }
+  },
+  "bundles": {
+    "browser": [
+      "agent-data.mjs",
+      "agent-runtime.mjs",
+      "runtime-servers.mjs",
+      "runtime-servers.d.mts",
+      "agent-verify.mjs",
+      "agent-verify.test.mjs",
+      "browser-preflight.mjs",
+      "browser-preflight.d.mts",
+      "browser-preflight.test.mjs",
+      "browser-session.mjs",
+      "browser-session.d.mts",
+      "browser-spawn-tracker.mjs",
+      "browser-workflow.mjs",
+      "browser-workflow.test.mjs",
+      "verification-process.mjs",
+      "browser-state.mjs",
+      "browser-compatibility.mjs",
+      "browser-prepare.mjs",
+      "browser-adapters.mjs",
+      "verification-lifecycle.mjs",
+      "verification-lifecycle.sh",
+      "convex-asset.mjs",
+      "runtime-servers.cjs",
+      "runtime-servers.d.cts"
+    ]
+  },
+  "consolidation": {
+    "retiredRules": {
+      ".agents/rules/browser-verification.mdc": [
+        "bc1d72e6fb25f6e64e992692b9ee1abfbf8aa6606000399fac9e96d73c1b5567"
+      ],
+      ".agents/rules/verification-report.mdc": [
+        "57b67a77589c6af2f330e10efdf2e80250b8f1de1f5ccc42091ef527aaccb059"
+      ],
+      ".agents/rules/tailwind-fix.mdc": [
+        "d20ba967f9884d89cd2fd28551e7ab7b7bf2e755a3a6cb32ab0451df4de6fc20"
+      ],
+      ".agents/rules/typecheck-fix.mdc": [
+        "ec14131f36b207abb48f1ae16dc549896d44d8d5b557b759120d3964642235e7"
+      ]
+    },
+    "files": {
+      ".agents/rules/agent-environment.mdc": [
+        "91ad2b1cec8f38dbaf337897db2dfe9e4f7e15b0f6d0cd48261a8fd2cb9537a9",
+        "e851a58ace3fbcada465a2cd117e9c208aa539003f55ab37f59aeeadf327f4c9"
+      ],
+      ".agents/rules/dev-depth.mdc": [
+        "3e835ca623194ec9ca5c6c29157fa0bab87de5d7a244fc235d99bf65ff8e91ac",
+        "0122088aafb39f6294bf5122bccacd7ee98a6d3e17695e5d1d0c85475ff80b67"
+      ],
+      ".agents/rules/ui-library.mdc": [
+        "42aee19e6ff4cfd492502878087ac14bba3b62881080a9a054b4f4cee777c646"
+      ],
+      ".agents/rules/agent-isolation.mdc": [
+        "8f63cfea19c71f34738d2633f336c61ee3f5385b03b06a30dff726c1ea258b0b",
+        "cf63b233df80a150f0f40576a08fea5e8f9eba16c86840fd14724b59933227d4"
+      ],
+      "scripts/agents/runtime/agent-runtime.mjs": [
+        "00084fe0aa470b20b13ba340a183534b702cdee5f395b50de3ecc44a9749254d",
+        "6b9c54b1a21bfb842f3098731c19f0a64e882ee723fefdb4550516d25f84afdc"
+      ],
+      "scripts/verification/browser-workflow.mjs": [
+        "8d81225ed7fddab366a30ad8250c5c78528002a67a7894d6fafa45639ab82233",
+        "45279e0f9ad319b89f938509f9084c40fe68dc45d1475a7bd852df681d49d932",
+        "f3bd30ac3588ca0a64fd96b80e9415ae6463597ffa8841a3cd6b0fe8a44b369c"
+      ],
+      "scripts/agents/shared/script-layout.mjs": [
+        "9dd69deade2b64f4a838bd3f7d1c395cfdc4e6928f924dfd2ee7481b8e232b61"
+      ],
+      "scripts/agents/shared/script-layout.json": [
+        "970790379e0fa9f3ff6a9fbabd620f495a78188db02e2df4ff549c2df5ba88b6"
+      ],
+      "scripts/agents/shared/migrate-script-layout.mjs": [
+        "7872cc46e0bcee7988d9d5e242ec9879d22611855acc92d76afb92b33f43742b"
+      ],
+      "scripts/agents/shared/agent-data.mjs": [
+        "954ffbee3161f35791f8165f3d0849cf2bd679ce903e6a5b255ae3e24a50ca50",
+        "f3d757fc1cd19a6c54cc725b61ec06dcf17f11fc53c105614523ad3eff3a499d"
+      ],
+      "scripts/dev/runtime-servers.mjs": [
+        "b05667fd68c7d0065ab819e6ff82bc57141cfe2664a39e434884cc3c4650397d",
+        "e00e72a95511029e7ed1d5d707151b6069eb98f7bd7d4221d9094e5d34cba27f"
+      ],
+      "scripts/dev/runtime-servers.d.mts": [
+        "1cad069f47c10357de7ccabcf09ce5de79be83f7cd50c2cef72f481c197c0780"
+      ],
+      "scripts/verification/agent-verify.mjs": [
+        "97fef0cdc287d72e659d604e33471fec29a2f45fe4ac4ff116385ea58aab9311"
+      ],
+      "scripts/verification/agent-verify.test.mjs": [
+        "d75640a70203e260cb385a8e4a50c06397aaa4cb9d4c86c57b6ea709a100c731"
+      ],
+      "scripts/verification/browser-preflight.mjs": [
+        "0ab27c1770971667b68e7d7b521dd428eeddb0bc1801fa23bc2bb173502af068"
+      ],
+      "scripts/verification/browser-preflight.d.mts": [
+        "fea3335305aa0f9785750ed7427623a60dbe2b91e0088d942b7be7de045fb5cf"
+      ],
+      "scripts/verification/browser-preflight.test.mjs": [
+        "3b9d15411b7a17d02ccf628af28d52cd3b573434804ae6c4c0b7ea8e84701a72"
+      ],
+      "scripts/verification/browser-session.mjs": [
+        "3d1306df2af1260b8be37456359cbaba0271cfa139d4b7c2fe0f782bdc6d173d"
+      ],
+      "scripts/verification/browser-session.d.mts": [
+        "9cefd6d74d5838d3d4951b02b4109931f323c5c034d7ac48dd3d9a522c5974a7"
+      ],
+      "scripts/verification/browser-spawn-tracker.mjs": [
+        "9e2c1d5909d37f3a1177dcabccdd211eefbda6035527fbfb7cf6037c3d769a98"
+      ],
+      "scripts/verification/browser-workflow.test.mjs": [
+        "e4b0d6f1ffdf6dc881513c8062f1c8327eca6e2738beddf2eab4c9469a4ac12b",
+        "d2d133e72ce6ce98ce7fc5b31f6982e2fdde6d77c73033a86508678a7fbaef28",
+        "848415019a377c9176ee94f9162f582c2c2a3bbc671eeeb10ccb81d0749c96d9"
+      ],
+      "scripts/verification/verification-process.mjs": [
+        "2430ccdfe5e90adc104eaa6520cfe5dc1a5a7a365872d80025ebedfebe0014ba"
+      ],
+      "scripts/dev/dev-depth.mjs": [
+        "adca61a762903378382317fb663df07e398ac5b50d3089bd7ed7ed3cd9f21320"
+      ],
+      "scripts/agents/host/agent-host-runner.mjs": [
+        "b44981f6acb90798fd5266bab3b1f57c678ba559d89214662e9d71d5454e3417"
+      ],
+      "scripts/dev/agent-dev.sh": [
+        "27dfb64baccd5ae4c0939f7b537988f91a0146dd87490cdbfcb61e609be41631"
+      ],
+      "scripts/verification/e2e-run.sh": [
+        "e8fef8b740e0f7e37467e0166d9b3ab8bfea8c0955fe67cd5ce786de0346c448"
+      ],
+      "scripts/verification/e2e-web-server.sh": [
+        "af45986dc0c38ea75ec7d5aea7755b313159501452a4ee1bfd97bab78466d96d"
+      ]
+    }
+  }
+}

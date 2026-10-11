@@ -1,0 +1,12 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "lib": ["esnext"],
+    "types": ["node"],
+    "noEmit": true,
+    "skipLibCheck": true,
+    "allowJs": false
+  },
+  "include": [".agents/**/*.ts", "scripts/**/*.ts"],
+  "exclude": ["node_modules"]
+}

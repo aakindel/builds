@@ -1,0 +1,2 @@
+#!/bin/sh
+[ ! -f scripts/agents/sync/strip-ai-trailers.mjs ] || node scripts/agents/sync/strip-ai-trailers.mjs "$1"
